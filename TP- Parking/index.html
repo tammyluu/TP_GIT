@@ -7,13 +7,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Voiture</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
 </head>
 <body>
     <div class="title">
         <h1>TP - POO - Parking - Class Véhicule </h1>
         <hr>
-        <p> Creation et utilisation en Javascript</p>
+        <p> Creation et utilisation des  <mark><b>Class</b></mark> en <mark><b>Java</b></mark></p>
     </div>
     <!--Table-->
 
@@ -35,29 +35,23 @@
 
                 <div class="col-12 text-center">
 
-                    <h4 class>Parking 3000</h4>
+                    <h4 text center>Parking 3000</h4>
 
-                </div>
+                </div>               
 
-                
-
-                <div class="col-10">
-
-                    <input type="text" id="info" class="p-1 form-control" placeholder="Saisir votre immatriculation">
-
-                </div>
-
-                <div class="col-2">
-
-                    <button class="btn btn-success" id="pay" onclick="validate()">Payer</button>
-
-                </div>
-
-                
+                <div class="container mt-5">
+                    <h1 class="display-4">Todo-List</h1>
+                  
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="licence" placeholder="Saisir votre immatriculation">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-success" id="addTask">Payer</button>
+                        </div>
+                    </div>                 
 
             <div class="row m-1 p-1">
 
-                <button class="btn btn-dark" id="getTicket" onclick="create()">Obtenir un ticket</button>
+                <button class="btn btn-dark" id="bntTicket"  >Obtenir un ticket</button>
 
             </div>
 
@@ -71,7 +65,7 @@
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
      crossorigin="anonymous"></script>
-     <script  src="./Vehiclu.js"></script>
+     <script  type = module src="./modules/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prendre un ticket</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin: 20px auto;
+            max-width: 300px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #ticket {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prendre un ticket</h1>
+    <form id="ticketForm">
+        <label for="immatriculation">Numéro d'immatriculation:</label>
+        <input type="text" id="immatriculation" required>
+        <button type="button" id="obtenirTicket">Obtenir un ticket</button>
+    </form>
+    <div id="ticket">Ticket de <span id="vehiculeInfo"></span>: <span id="ticketNumber">-</span></div>
+
+    <script>
+        class Vehicule {
+            constructor(model, marque, kilometrage, annee) {
+                this.model = model;
+                this.marque = marque;
+                this.kilometrage = kilometrage;
+                this.annee = annee;
+            }
+
+            display() {
+                return `Modèle : ${this.model}, Marque : ${this.marque}, Kilométrage : ${this.kilometrage} km, Année : ${this.annee}`;
+            }
+        }
+
+        const immatriculationInput = document.getElementById("immatriculation");
+        const obtenirTicketButton = document.getElementById("obtenirTicket");
+        const vehiculeInfo = document.getElementById("vehiculeInfo");
+        const ticketNumberDisplay = document.getElementById("ticketNumber");
+
+        obtenirTicketButton.addEventListener("click", () => {
+            const immatriculation = immatriculationInput.value;
+            if (immatriculation) {
+                // Créer un objet Vehicule avec des attributs fictifs
+                const vehicule = new Vehicule("Civic", "Honda", 50000, 2020);
+                const vehiculeDetails = vehicule.display();
+                vehiculeInfo.textContent = vehiculeDetails;
+                
+                // Générer un numéro de ticket (simulé)
+                const ticketNumber = Math.floor(Math.random() * 1000) + 1;
+                ticketNumberDisplay.textContent = ticketNumber;
+                
+                immatriculationInput.value = ""; // Réinitialiser le champ d'entrée
+            }
+        });
+    </script>
+</body>
+</html>
