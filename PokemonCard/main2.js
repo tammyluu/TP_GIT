@@ -1,37 +1,97 @@
-const postApi = "https://pokeapi.co/api/v2/pokemon/ditto"
+const pokemonBlock = document.querySelector('.container')
+const carouselInner = document.querySelector('.carousel-inner');
+const pokemonCount = 10; // Number of Pokémon cards to display
+let currentIndex = 0;
 
- fetch (postApi)
-    .then(function(response){
-        return response.json();
-        // JSON.parse : JSON -> JS types
-        
-    })
-    .then (function(posts){
-        console.log("1er",posts);
-        for (let post in  posts){
-            console.log( post);
-            let getInfo = response.json().results
-            return   `
-            <img src="${posts.sprites.front_shiny}" ></img>
-            <h5>${post.name}</h5>
-            <p>${post.weight}</p>
-           <p>${post.height}</p>
-                    `;
+ function getPokemon(id) {
+    fetch (`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    .then ((Response) => Response.json())
+    .then ((data) => {
+        //console.log('>>> check data', data));
+        createPokemon(data)
+ })
+}
+ //getPokemon(1)
+ function getPokemons(number){
+    for (let i = 0; i < number; i++){
+        getPokemon(i);
+    }
+ }
+ getPokemon(25)
+ //console.log(getPokemon(25));
+ function createPokemon (pokemon){
+    const item = document.createElement('div');
+    item.classList.add('carousel-item');
+
+    if (currentIndex === 0) {
+        item.classList.add('active'); // Mark the first item as active
+    }
+
+    const card = document.createElement('div');
+    card.classList.add('pokemon-block');
+    
+    const spriteContainer = document.createElement('div')
+    spriteContainer.classList.add('img-container')
+    
+    const sprite = document.createElement('img')
+    sprite.src = pokemon.sprites.front_default
+    spriteContainer.appendChild(sprite)
+    
+    // const number = document.createElement('p')
+    // number.textContent= `#${pokemon.id.toString().padStart(3,0)}`
+    
+    const name = document.createElement('p')
+    name.classList.add('name');
+    
+    const weight = document.createElement('p')
+    name.classList.add('Weight');
+    
+    const height = document.createElement('p')
+    name.classList.add('Heigth');
+
+    name.textContent =`${pokemon.name}`
+    height.textContent =`Height : ${pokemon.weight}`
+    weight.textContent =`Weight : ${pokemon.height}`
+    
+    card.appendChild(spriteContainer)
+    //card.appendChild(number)
+    card.appendChild(name)
+    card.appendChild(weight)
+    card.appendChild(height)
+    pokemonBlock.appendChild(card)
+ }
+ async function loadPokemons(startIndex) {
+    carouselInner.innerHTML = ''; // Clear existing items
+
+    for (let i = startIndex; i < startIndex + pokemonCount; i++) {
+        const pokemon = await getPokemon(i + 1);
+        const carouselItem = createPokemon(pokemon);
+        carouselInner.appendChild(carouselItem);
+    }
+}
+
+function showPrevious() {
+    if (currentIndex > 0) {
+        currentIndex -= pokemonCount;
+        if (currentIndex < 0) {
+            currentIndex = 0;
         }
-        //render on page HTML
-        let htmls = posts( function (post){
-           return  `
-        
-            <img src="${post.sprites.front_shiny}" ></img>
-            <h5>${post.name}</h5>
-            <p>${post.weight}</p>
-           <p>${post.height}</p>
-                    `;
-       }) ; // map: récuperer  un array qui tient nbr éléments corresponse (= nbr éléments de posts)
-        // return a string
-           let html = htmls.join('');
-            document.getElementById('post-block').innerHTML = html;
-        })
-    .catch (function (err) {
-         console.log('eurreur ' + err);;
-     });
+        loadPokemons(currentIndex);
+    }
+}
+function showNext() {
+    if (currentIndex < 10) { // Assuming there are 890 Pokémon in the API
+        currentIndex += pokemonCount;
+        loadPokemons(currentIndex);
+    }
+}
+
+document.getElementById('pokemonCarousel').addEventListener('slid.bs.carousel', (e) => {
+    currentIndex = e.to;
+});
+
+// Load initial Pokémon cards
+loadPokemons(currentIndex);
+getPokemons(10)
+
+    

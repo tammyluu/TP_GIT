@@ -1,0 +1,18 @@
+.img-container {
+    background-image: url("./blob.svg");
+    background-repeat: no-repeat ;
+    background-position: center;
+    
+}
+.pokemon-block {
+    border-radius:  10px;
+    padding: 10px;
+    background-color: rgb(243, 229, 229);
+}
+.name {
+text-align: center;
+font-weight: bolder;
+}
+div {
+    text-align: center;
+}
