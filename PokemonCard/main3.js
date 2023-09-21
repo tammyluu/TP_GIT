@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showNext() {
-        if (currentIndex < 890) { // Assuming there are 890 Pokémon in the API
+        if (currentIndex < 10) { // Assuming there are 890 Pokémon in the API
             currentIndex += 1;
             loadPokemons(currentIndex);
         }
