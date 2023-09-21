@@ -18,25 +18,25 @@ console.log(userNames);
     age : 20 ,
     isLoggedIn : true
  }
- console.log("1st",person);
+ //console.log("1st",person.age);
 
  let person1 : {
     firstName : string,
     age: number,
-    isLoggedIn: true
+    isLoggedIn: boolean
  } =  {
     firstName : "Dupont",
     age : 20 ,
     isLoggedIn : true
  }
- console.log("2st",person1);
+ console.log("2st",person1.age);
 
- let person2 : object = { 
+ let person2  = { 
     firstName : "Dupont",
     age : 20 ,
     isLoggedIn : true
 }
-console.log("3nd",person2);
+console.log("3nd",person2.age);
 
 let infos : [string, number];
 

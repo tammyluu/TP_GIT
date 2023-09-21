@@ -117,3 +117,10 @@ let monObjectC : { //definir avant distribution
 }
 monObjectC.age // trouve la propriete
 // de préférence utilisation de l'inference
+
+ let monObject:object = {
+    firstname : "Dupont"
+ }
+ console.log("monObjet obj : " + typeof monObject);
+ monObject = []
+ console.log("monObject array: " + typeof monObject);
