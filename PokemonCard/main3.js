@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     async function loadPokemons(startIndex) {
-        //carouselInner.innerHTML = ''; // Clear existing items
+        carouselInner.innerHTML = ''; // Clear existing items
 
         for (let i = startIndex; i < startIndex + pokemonCount; i++) {
             const pokemon = await getPokemon(i + 1);
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function showNext() {
-        if (currentIndex < 10) { // Assuming there are 10 Pokémon in the API
+        if (currentIndex < 1) { // Assuming there are 10 Pokémon in the API
             currentIndex += 1;
             loadPokemons(currentIndex);
         }
