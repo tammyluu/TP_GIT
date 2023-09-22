@@ -60,8 +60,7 @@ btnAddSubject.onclick = () => {
     // Récupération des saisies input
     const subject = document.querySelector('#subject').value;  
     if ( (lastName != "" && firstName != "") && subject!= "" ) {
-        // get student
-        
+        // r
         // Instanciation de notre objet Student
         let tmp = new Student(lastName, firstName, subject, "");
 

@@ -1,4 +1,5 @@
 import Student from "./js/Student.js"; 
+import StudentList from "./js/StudentList.js";
 
 // Récupération des éléments du DOM
 const tableau = document.querySelector('#tableau');
@@ -33,8 +34,8 @@ function initalStudentList() {
         Students.push(tmp);
     }
 }
-function findStudentByName() {
-
+function addStudent () {
+    let tmp = new Student ()
 }
 
 // Click Bouton Ajouter
@@ -44,11 +45,9 @@ btnAddStudent.onclick = () => {
     const firstName = document.querySelector('#firstName').value;
        
     if (lastName != "" && firstName != "") {
-        // Instanciation de notre objet Student 
+        // Instanciation de notre objet Student
         let tmp = new Student(lastName, firstName, "","");
-
         Students.push(tmp);
-
         updateTab();
         resetForm();
     } else {
@@ -60,13 +59,9 @@ btnAddSubject.onclick = () => {
     // Récupération des saisies input
     const subject = document.querySelector('#subject').value;  
     if ( (lastName != "" && firstName != "") && subject!= "" ) {
-        // get student
-        
         // Instanciation de notre objet Student
         let tmp = new Student(lastName, firstName, subject, "");
-
         Students.push(tmp);
-
         updateTab();
         resetForm();
     } else {
@@ -78,11 +73,9 @@ btnAddNote.onclick = () => {
     // Récupération des saisies input
     const note = document.querySelector('#note').value;  
     if (note != "") {
-        // Instanciation de notre objet Student(élève existe)
+        // Instanciation de notre objet Student
         let tmp = new Student(lastName, firstName, subject, note);
-
         Students.push(tmp);
-
         updateTab();
         resetForm();
     } else {
@@ -103,6 +96,16 @@ function updateTab() {
             <td>${Students[i].note}</td>
          </tr>        
         `
+    }
+}
+function findStudentByName (key){
+    let  listStudent = new Students;
+    for (let i = 0; i < Students.length; i++){
+        findStudent = this.Students[i];
+        if (student.lastName.toLowerCase().trim().search(key.toLowerCase().trim()) != -1){
+            listStudent.
+        }
+
     }
 }
 function resetForm() {

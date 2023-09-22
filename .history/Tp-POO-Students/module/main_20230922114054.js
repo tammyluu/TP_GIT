@@ -33,9 +33,7 @@ function initalStudentList() {
         Students.push(tmp);
     }
 }
-function findStudentByName() {
 
-}
 
 // Click Bouton Ajouter
 btnAddStudent.onclick = () => {
@@ -44,7 +42,7 @@ btnAddStudent.onclick = () => {
     const firstName = document.querySelector('#firstName').value;
        
     if (lastName != "" && firstName != "") {
-        // Instanciation de notre objet Student 
+        // Instanciation de notre objet Student
         let tmp = new Student(lastName, firstName, "","");
 
         Students.push(tmp);
@@ -60,8 +58,6 @@ btnAddSubject.onclick = () => {
     // Récupération des saisies input
     const subject = document.querySelector('#subject').value;  
     if ( (lastName != "" && firstName != "") && subject!= "" ) {
-        // get student
-        
         // Instanciation de notre objet Student
         let tmp = new Student(lastName, firstName, subject, "");
 
