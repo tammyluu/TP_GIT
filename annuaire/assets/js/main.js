@@ -1,5 +1,27 @@
 import { Person } from "./classes/Person.js";
 let person;
 let personArray = [];
-person = new Person("Albert", "Dupont", "12/12/1967", albert.dupont, );
+person = new Person("Albert", "DUPONT", 2000 - 12 - 1, "albert.dupont@hotmail.fr", "+33 61234566788", 59001);
+let person2 = new Person("John", "SMITH", 1970 - 10 - 9, "John.SMITHt@gmail.com", "+33 61234566788", 62001);
+let person3 = new Person("Clara", "GOMEZ", 2005 - 10 - 21, "Clara.GOMEZ@yahoo.com", "+33 61234566788", 75001);
+let person4 = new Person("Elizebeth", "MARTIN", 1998 - 9 - 6, "Elizebeth.MARTIN@wanado.fr", "+33 61234566788", 92001);
 personArray.push(person);
+personArray.push(person2);
+personArray.push(person3);
+personArray.push(person4);
+console.log(personArray);
+const btnAddContact = document.querySelector('.btnAddContact');
+const btnEditContact = document.querySelector('#btnEditContact');
+const btnDeleteContact = document.querySelector('#btnDeleteContact');
+const firstname = document.querySelector('#details-firstname');
+const lastname = document.querySelector('#details-lastname');
+const dateOfBirth = document.querySelector('#details-dateOfBirth');
+const age = document.querySelector('#details-age');
+const email = document.querySelector('#details-email');
+const phoneNumber = document.querySelector('#details-phoneNumber');
+function displayListContact() {
+    for (let i = 0; i < personArray.length; i++) {
+        console.log("for", personArray[i]);
+    }
+}
+displayListContact();
