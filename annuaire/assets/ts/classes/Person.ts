@@ -1,15 +1,16 @@
 export class Person {
   
-    private static _count: number = 0
+    private static _count: number = 0 //un compteur à prepre classe
     private _id: number;
     private _firstname: string;
     private _lastname: string;
+    private _age: number;
     private _birthday: Date;
     private _email: string;
     private _tel: string;
     readonly numeroIdNat: number;
-    constructor(firstname: string, lastname: string, birthday: Date, email: string, tel : string,numeroIdNat: number){
-      this._id = ++Person._count
+    constructor(firstname: string, lastname: string, birthday: Date, email: string, tel : string, numeroIdNat: number){
+      this._id = ++Person._count 
       this._firstname = firstname
       this._lastname = lastname
       this._birthday = birthday
@@ -40,9 +41,9 @@ export class Person {
       }
     
     set birthday(value: Date) {
-        if (value !== new Date()) {
+        
           this._birthday = value
-        }
+        
       }
     get email() {
         return this._email
@@ -67,9 +68,13 @@ export class Person {
       }
 
     toString (){
-        return this.firstname + this.lastname + this. birthday + this.birthday + this.email+ this.tel 
+        return this.firstname +" "+ this.lastname +"  "+ this.birthday +"  "+ " "+ this.email+ "  "+ this.tel 
         }
-      
+
+    get age():number{
+       return this._age = new Date().getFullYear()- this._birthday.getFullYear() ;
+    }  
+
     }
 
 

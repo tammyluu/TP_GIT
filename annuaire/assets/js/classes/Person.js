@@ -27,9 +27,7 @@ export class Person {
         return this._birthday;
     }
     set birthday(value) {
-        if (value !== new Date()) {
-            this._birthday = value;
-        }
+        this._birthday = value;
     }
     get email() {
         return this._email;
@@ -51,7 +49,10 @@ export class Person {
         return Person._count;
     }
     toString() {
-        return this.firstname + this.lastname + this.birthday + this.birthday + this.email + this.tel;
+        return this.firstname + " " + this.lastname + "  " + this.birthday + "  " + " " + this.email + "  " + this.tel;
+    }
+    get age() {
+        return this._age = new Date().getFullYear() - this._birthday.getFullYear();
     }
 }
-Person._count = 0;
+Person._count = 0; //un compteur à prepre classe

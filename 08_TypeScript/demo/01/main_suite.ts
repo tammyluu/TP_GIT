@@ -191,5 +191,6 @@ let monText = ""
 function onInputChange(event: InputEvent) {
     monText = (<HTMLInputElement> event.target).value
     monText = (event.target as HTMLInputElement).value
+   
 }
  
