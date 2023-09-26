@@ -193,4 +193,18 @@ function onInputChange(event: InputEvent) {
     monText = (event.target as HTMLInputElement).value
    
 }
- 
+/* 
+---------- Union type ---------------
+*/
+console.log("---------- Union type ---------------");
+let strOrNum : string | number;// type string ou number
+strOrNum = "true";
+strOrNum = 42;
+
+type stringOrNumber = string | number; // ce n'est pas déclarer de var, on déclare type
+
+let strNum : stringOrNumber;
+let monTab : stringOrNumber[]= []
+monTab.push(23);
+monTab.push("hello")
+console.table(monTab);

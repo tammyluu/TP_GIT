@@ -123,4 +123,4 @@ monObjectC.age // trouve la propriete
  }
  console.log("monObjet obj : " + typeof monObject);
  monObject = []
- console.log("monObject array: " + typeof monObject);
+ console.log("monObject array: " + typeof monObject

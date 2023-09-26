@@ -133,3 +133,15 @@ function onInputChange(event) {
     monText = event.target.value;
     monText = event.target.value;
 }
+/*
+---------- Union type ---------------
+*/
+console.log("---------- Union type ---------------");
+let strOrNum; // type string ou number
+strOrNum = "true";
+strOrNum = 42;
+let strNum;
+let monTab = [];
+monTab.push(23);
+monTab.push("hello");
+console.table(monTab);
