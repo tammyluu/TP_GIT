@@ -145,3 +145,17 @@ let monTab = [];
 monTab.push(23);
 monTab.push("hello");
 console.table(monTab);
+// Intersection type
+console.log("-------------Intersection type-------");
+let poissonRouge;
+let poissonVert;
+poissonRouge = {
+    nom: "toto",
+    yeux: 3,
+    href: "#FFFFFF"
+};
+poissonVert = {
+    nom: "toto",
+    yeux: 3,
+    href: "#FFFFFF",
+};

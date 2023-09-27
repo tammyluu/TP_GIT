@@ -208,3 +208,27 @@ let monTab : stringOrNumber[]= []
 monTab.push(23);
 monTab.push("hello")
 console.table(monTab);
+
+// Intersection type
+console.log("-------------Intersection type-------");
+interface Poisson {
+    nom: string,
+    yeux : number
+}
+interface Couleur {
+    href: string,
+    
+}
+let poissonRouge : Poisson & Couleur;
+type PoissonRed = Poisson & Couleur;
+let poissonVert: PoissonRed;
+poissonRouge = {
+    nom : "toto",
+    yeux : 3,
+    href : "#FFFFFF"
+}
+poissonVert = {
+    nom : "toto",
+    yeux : 3,
+    href : "#FFFFFF",   
+}
