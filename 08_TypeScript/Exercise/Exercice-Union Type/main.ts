@@ -31,4 +31,3 @@ console.log(user4);
 
 
 
-console.table(monTab);

@@ -1,6 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Student = exports.Person = void 0;
 class Person {
     constructor(firstname, lastname, age, numeroIdNat) {
         this._id = ++Person._count;
@@ -26,7 +23,6 @@ class Person {
         return Person._count;
     }
 }
-exports.Person = Person;
 Person._count = 0;
 class Student extends Person {
     constructor(firstname, lastname, age, numeroIdNat, backpack) {
@@ -37,4 +33,4 @@ class Student extends Person {
         return this.fullname + `backpack ? ${this._backpack}`;
     }
 }
-exports.Student = Student;
+export { Person, Student };

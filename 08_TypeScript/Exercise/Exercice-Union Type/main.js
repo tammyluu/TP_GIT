@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 let user1 = {
     nom: "Toto Dupont",
     age: 35,
@@ -24,4 +22,4 @@ console.log(user1);
 console.log(user2);
 console.log(user3);
 console.log(user4);
-console.table(monTab);
+export {};
