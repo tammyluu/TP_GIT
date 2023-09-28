@@ -12,7 +12,7 @@ let selectedRecipe = recipes[0];
 const refeshRecipesContainer = () =>{
     console.log("mettre les contacts de mon tableau dans mon dom");
     console.log(selectedRecipe.prepTime);
-    console.log(selectedRecipe.cookTime);
+    console.log(object);
     recipesContainer.innerHTML = "";
     recipes.forEach(recipe => {
         const newButton = document.createElement("button");
@@ -23,7 +23,8 @@ const refeshRecipesContainer = () =>{
         preTimebtn.className = recipe === selectedRecipe ? "preTimebtn btn-dark w-30 my-2" :  "preTimebtn btn-outline-light w-30 my-2"
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe
-                      
+            refeshRecipesContainer()
+            
         })
         preTimebtn.addEventListener('click', () => {
             selectedRecipe = recipe
@@ -32,7 +33,6 @@ const refeshRecipesContainer = () =>{
         })
 
         recipesContainer.appendChild(newButton)
-        preTimebtn.appendChild(preTimebtn)
     })
 }
 refeshRecipesContainer()

@@ -23,7 +23,8 @@ const refeshRecipesContainer = () =>{
         preTimebtn.className = recipe === selectedRecipe ? "preTimebtn btn-dark w-30 my-2" :  "preTimebtn btn-outline-light w-30 my-2"
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe
-                      
+            refeshRecipesContainer()
+            
         })
         preTimebtn.addEventListener('click', () => {
             selectedRecipe = recipe

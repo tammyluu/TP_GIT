@@ -27,7 +27,7 @@ const refeshRecipesContainer = () =>{
         })
         preTimebtn.addEventListener('click', () => {
             selectedRecipe = recipe
-            refeshRecipesContainer()
+            refeshRecipesContainer(
             
         })
 
