@@ -7,32 +7,35 @@ import { recipesDetail } from "./data/recipes.js";
 const recipes: IRecipe[] = Object.values(recipesDetail)
 console.table(recipes);
 
-const recipesContainer = document.getElementById("recipesContainer") as HTMLDivElement
+const recipesContainer = document.querySelector("#recipesContainer") as HTMLDivElement
+const preTimebtn = document.querySelector("#preTimebtn") as HTMLDivElement
 let selectedRecipe = recipes[0];
 const refeshRecipesContainer = () =>{
-    console.log("mettre les contacts de mon tableau dans mon dom");
+    console.log("mettre les recipes de mon tableau dans mon dom");
+    console.log(selectedRecipe.name);
     console.log(selectedRecipe.prepTime);
     console.log(selectedRecipe.cookTime);
     recipesContainer.innerHTML = "";
+    preTimebtn.innerHTML = "";
     recipes.forEach(recipe => {
         const newButton = document.createElement("button");
-        newButton.textContent = recipe.name
-        newButton.className = recipe === selectedRecipe ? "btn btn-dark w-100 my-2" :  "btn btn-outline-light w-100 my-2"
-        const preTimebtn = document.createElement("preTimebtn")
+        newButton.innerHTML = `${recipe.name} ${ recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`
+        newButton.className = recipe === selectedRecipe ? "btn btn-light w-100 my-2" :  "btn btn-outline-light w-100 my-2"
+       
         preTimebtn.textContent = recipe.prepTime
         preTimebtn.className = recipe === selectedRecipe ? "preTimebtn btn-dark w-30 my-2" :  "preTimebtn btn-outline-light w-30 my-2"
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe
-                      
+            //refeshRecipesContainer()          
         })
         preTimebtn.addEventListener('click', () => {
             selectedRecipe = recipe
-            refeshRecipesContainer()
+           
             
         })
 
-        recipesContainer.appendChild(newButton)
-        preTimebtn.appendChild(preTimebtn)
+         recipesContainer.appendChild(newButton)
+        
     })
 }
 refeshRecipesContainer()
