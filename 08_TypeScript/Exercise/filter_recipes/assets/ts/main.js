@@ -17,7 +17,9 @@ const ingredientsDetail = document.getElementById("details-ingredients");
 const instructionsDetail = document.getElementById("details-instructions");
 const displayModal = document.getElementById("displayRecipesDetailModal");
 const button = document.getElementById("btn");
-let listOfIngredients = document.getElementById("ingredients");
+const listOfIngredients = document.getElementById("ingredients");
+const closeEditContactCross = document.getElementById("editContactClose");
+let filter = document.getElementById("filterButton");
 const refeshRecipesContainer = () => {
     console.log("mettre les recipes de mon tableau dans mon dom");
     // console.log(selectedRecipe.name);
@@ -26,8 +28,7 @@ const refeshRecipesContainer = () => {
     recipesContainer.innerHTML = "";
     recipesTab.forEach(recipe => {
         const newButton = document.createElement("button");
-        newButton.innerHTML = `<b>${recipe.name}</b><hr><img
-        src="./assets/chef-hat.svg" /> ${recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`;
+        newButton.innerHTML = `<b>${recipe.name}</b><hr> ${recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`;
         newButton.className = recipe === selectedRecipe ? "btn btn-light w-100 my-2" : "btn btn-outline-light w-100 my-2";
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe;
@@ -35,6 +36,14 @@ const refeshRecipesContainer = () => {
             displayModal.style.display = "block";
             nameDetail.innerHTML = recipe.name;
             instructionsDetail.innerHTML = `${recipe.instructions}`;
+            selectedRecipe = recipe;
+            console.log(selectedRecipe);
+            recipesTab.forEach(recipe => {
+                const ingredientsList = recipe.ingredients;
+                console.log(ingredientsList.forEach(recipe => {
+                    ingredientsDetail.innerHTML += `<li> ${recipe.name},${recipe.amount}  </li>`;
+                }));
+            });
             refeshRecipesContainer();
         });
         recipesContainer.appendChild(newButton);
@@ -43,6 +52,7 @@ const refeshRecipesContainer = () => {
             recipesTab.forEach(recipe => {
                 const ingredientsList = recipe.ingredients;
                 console.log(ingredientsList.forEach(recipe => {
+                    instructionsDetail.innerHTML += `<li>${recipe.name}, ${recipe.amount}</li>`;
                 }));
             });
         });
@@ -52,13 +62,29 @@ refeshRecipesContainer();
 //list d'ingrédient
 recipesTab.forEach(recipe => {
     const ingredientsList = recipe.ingredients;
-    console.log(ingredientsList.forEach(recipe => {
+    console.log("3", ingredientsList.forEach(recipe => {
         let option = document.createElement('option');
         option.innerHTML = `${recipe.name}`;
         listOfIngredients.appendChild(option);
     }));
 });
-//Fonction pour afficher les recettes
-function displayRecipes(recipes) {
-    const recipesContainer = document.querySelector('.container');
-}
+closeEditContactCross.addEventListener('click', () => {
+    displayModal.style.display = "none";
+});
+const filterButton = document.getElementById("filterButton");
+const prepTimeRange = document.getElementById('prepTimeRange');
+const cookingTimeRange = document.getElementById('cookingTimeRange');
+prepTimeRange.addEventListener('input', () => {
+    const prepTimeOutput = prepTimeRange.nextElementSibling;
+    prepTimeOutput.textContent = prepTimeRange.value;
+});
+cookingTimeRange.addEventListener('input', () => {
+    const cookingTimeOutput = cookingTimeRange.nextElementSibling;
+    cookingTimeOutput.textContent = cookingTimeRange.value;
+});
+// filterButton.addEventListener('click', () => {
+//     // Récupérez les valeurs actuelles des filtres
+//     const prepTimeFilter = prepTimeRange.value;
+//     const cookingTimeFilter = cookingTimeRange.value;
+//     // Appelez la fonction de filtrage des recettes avec ces valeurs
+//   });
