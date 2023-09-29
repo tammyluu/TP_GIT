@@ -1,5 +1,4 @@
-// Convertir l'objet de recettes en un tableau d'objets Recipe
-export const recipesDetail = {
+export const recipes = {
     "b104aff8-bdfe-4171-93e3-03e09465916b": {
         name: "Tomato Basil Pasta",
         servings: 4,
