@@ -24,7 +24,6 @@ const ingredientsDetail = document.getElementById("details-ingredients") as HTML
 const instructionsDetail = document.getElementById("details-instructions") as HTMLDivElement
 const displayModal = document.getElementById("displayRecipesDetailModal") as HTMLDivElement
 const button = document.getElementById("btn") as HTMLDivElement
-let listOfIngredients = document.getElementById("ingredients") as HTMLSelectElement
 
 const refeshRecipesContainer = () =>{
     console.log("mettre les recipes de mon tableau dans mon dom");
@@ -34,8 +33,7 @@ const refeshRecipesContainer = () =>{
     recipesContainer.innerHTML = "";
     recipesTab.forEach(recipe => {
         const newButton = document.createElement("button");
-        newButton.innerHTML = `<b>${recipe.name}</b><hr><img
-        src="./assets/chef-hat.svg" /> ${ recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`    
+        newButton.innerHTML = `<b>${recipe.name}</b><hr> ${ recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`
         newButton.className = recipe === selectedRecipe ? "btn btn-light w-100 my-2" :  "btn btn-outline-light w-100 my-2"
        
         newButton.addEventListener('click', () => {
@@ -52,7 +50,7 @@ const refeshRecipesContainer = () =>{
             recipesTab.forEach(recipe =>{
                 const ingredientsList = recipe.ingredients;
                 console.log(ingredientsList.forEach(recipe =>{
-                    
+                    ing
                 }));
             })
         })
@@ -61,15 +59,7 @@ const refeshRecipesContainer = () =>{
 }
 refeshRecipesContainer()
 //list d'ingrédient
-recipesTab.forEach(recipe => {
-    const ingredientsList = recipe.ingredients;
-    console.log(ingredientsList.forEach(recipe =>{
-        let option = document.createElement('option');
-        option.innerHTML = `${recipe.name}`;
-        listOfIngredients.appendChild(option);
-
-    }));
-})
+recipesTab.forEach()
 //Fonction pour afficher les recettes
 function displayRecipes(recipes: IRecipe[]) {
   const recipesContainer = document.querySelector('.container');

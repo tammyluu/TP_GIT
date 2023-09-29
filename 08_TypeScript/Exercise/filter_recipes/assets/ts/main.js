@@ -17,6 +17,7 @@ const ingredientsDetail = document.getElementById("details-ingredients");
 const instructionsDetail = document.getElementById("details-instructions");
 const displayModal = document.getElementById("displayRecipesDetailModal");
 const button = document.getElementById("btn");
+let listOfIngredients = document.getElementById("ingredients");
 const refeshRecipesContainer = () => {
     console.log("mettre les recipes de mon tableau dans mon dom");
     // console.log(selectedRecipe.name);
@@ -25,7 +26,8 @@ const refeshRecipesContainer = () => {
     recipesContainer.innerHTML = "";
     recipesTab.forEach(recipe => {
         const newButton = document.createElement("button");
-        newButton.innerHTML = `<b>${recipe.name}</b><hr> ${recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`;
+        newButton.innerHTML = `<b>${recipe.name}</b><hr><img
+        src="./assets/chef-hat.svg" /> ${recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`;
         newButton.className = recipe === selectedRecipe ? "btn btn-light w-100 my-2" : "btn btn-outline-light w-100 my-2";
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe;
@@ -36,9 +38,26 @@ const refeshRecipesContainer = () => {
             refeshRecipesContainer();
         });
         recipesContainer.appendChild(newButton);
+        newButton.addEventListener('click', () => {
+            selectedRecipe = recipe;
+            recipesTab.forEach(recipe => {
+                const ingredientsList = recipe.ingredients;
+                console.log(ingredientsList.forEach(recipe => {
+                }));
+            });
+        });
     });
 };
 refeshRecipesContainer();
+//list d'ingrédient
+recipesTab.forEach(recipe => {
+    const ingredientsList = recipe.ingredients;
+    console.log(ingredientsList.forEach(recipe => {
+        let option = document.createElement('option');
+        option.innerHTML = `${recipe.name}`;
+        listOfIngredients.appendChild(option);
+    }));
+});
 //Fonction pour afficher les recettes
 function displayRecipes(recipes) {
     const recipesContainer = document.querySelector('.container');

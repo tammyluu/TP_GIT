@@ -24,7 +24,7 @@ const ingredientsDetail = document.getElementById("details-ingredients") as HTML
 const instructionsDetail = document.getElementById("details-instructions") as HTMLDivElement
 const displayModal = document.getElementById("displayRecipesDetailModal") as HTMLDivElement
 const button = document.getElementById("btn") as HTMLDivElement
-let listOfIngredients = document.getElementById("ingredients") as HTMLSelectElement
+let listOfIngredients = document.getElementById("ingredientslist") as HTMLSelectElement
 
 const refeshRecipesContainer = () =>{
     console.log("mettre les recipes de mon tableau dans mon dom");
@@ -66,7 +66,7 @@ recipesTab.forEach(recipe => {
     console.log(ingredientsList.forEach(recipe =>{
         let option = document.createElement('option');
         option.innerHTML = `${recipe.name}`;
-        listOfIngredients.appendChild(option);
+        listOfIngredients.appendChild
 
     }));
 })
