@@ -39,9 +39,7 @@ const refeshRecipesContainer = () =>{
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe
             console.log(selectedRecipe);
-            displayModal.style.display = "block";
-            nameDetail.innerHTML= recipe.name;
-            instructionsDetail.innerHTML = `${recipe.instructions}`
+            displayModal.style.display
             refeshRecipesContainer()          
         })
         recipesContainer.appendChild(newButton)

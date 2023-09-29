@@ -21,9 +21,8 @@ const servingsDetail = document.getElementById("details-servings") as HTMLHeadin
 const prepTimeDetail = document.getElementById("details-prepTime") as HTMLDivElement
 const cookTimeDetail = document.getElementById("details-cookTime") as HTMLDivElement
 const ingredientsDetail = document.getElementById("details-ingredients") as HTMLDivElement
-const instructionsDetail = document.getElementById("details-instructions") as HTMLDivElement
-const displayModal = document.getElementById("displayRecipesDetailModal") as HTMLDivElement
-const button = document.getElementById("btn") as HTMLDivElement
+const instructionsDetail = document.getElementById("details-instructions") as HTMLHeadingElement
+
 
 const refeshRecipesContainer = () =>{
     console.log("mettre les recipes de mon tableau dans mon dom");
@@ -31,6 +30,7 @@ const refeshRecipesContainer = () =>{
     // console.log(selectedRecipe.prepTime);
     // console.log(selectedRecipe.cookTime);
     recipesContainer.innerHTML = "";
+    preTimebtn.innerHTML = "";
     recipesTab.forEach(recipe => {
         const newButton = document.createElement("button");
         newButton.innerHTML = `<b>${recipe.name}</b><hr> ${ recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`
@@ -38,10 +38,6 @@ const refeshRecipesContainer = () =>{
        
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe
-            console.log(selectedRecipe);
-            displayModal.style.display = "block";
-            nameDetail.innerHTML= recipe.name;
-            instructionsDetail.innerHTML = `${recipe.instructions}`
             refeshRecipesContainer()          
         })
         recipesContainer.appendChild(newButton)

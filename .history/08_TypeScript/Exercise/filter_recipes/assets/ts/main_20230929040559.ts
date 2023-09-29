@@ -40,8 +40,7 @@ const refeshRecipesContainer = () =>{
             selectedRecipe = recipe
             console.log(selectedRecipe);
             displayModal.style.display = "block";
-            nameDetail.innerHTML= recipe.name;
-            instructionsDetail.innerHTML = `${recipe.instructions}`
+            na
             refeshRecipesContainer()          
         })
         recipesContainer.appendChild(newButton)

@@ -22,8 +22,8 @@ const prepTimeDetail = document.getElementById("details-prepTime") as HTMLDivEle
 const cookTimeDetail = document.getElementById("details-cookTime") as HTMLDivElement
 const ingredientsDetail = document.getElementById("details-ingredients") as HTMLDivElement
 const instructionsDetail = document.getElementById("details-instructions") as HTMLDivElement
-const displayModal = document.getElementById("displayRecipesDetailModal") as HTMLDivElement
-const button = document.getElementById("btn") as HTMLDivElement
+const displayRecipesDetail = document.getElementById("displayRecipesDetailModal") as HTMLDivElement
+const button = document.getElementById("btn") as HTMLD
 
 const refeshRecipesContainer = () =>{
     console.log("mettre les recipes de mon tableau dans mon dom");
@@ -39,9 +39,6 @@ const refeshRecipesContainer = () =>{
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe
             console.log(selectedRecipe);
-            displayModal.style.display = "block";
-            nameDetail.innerHTML= recipe.name;
-            instructionsDetail.innerHTML = `${recipe.instructions}`
             refeshRecipesContainer()          
         })
         recipesContainer.appendChild(newButton)

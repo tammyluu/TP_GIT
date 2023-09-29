@@ -9,20 +9,30 @@ for (const key in recipes) {
     }
 }
 const recipesContainer = document.querySelector("#recipesContainer");
-const preTimebtn = document.querySelector("#preTimebtn");
+const nameDetail = document.getElementById("details-name");
+const servingsDetail = document.getElementById("details-servings");
+const prepTimeDetail = document.getElementById("details-prepTime");
+const cookTimeDetail = document.getElementById("details-cookTime");
+const ingredientsDetail = document.getElementById("details-ingredients");
+const instructionsDetail = document.getElementById("details-instructions");
+const displayModal = document.getElementById("displayRecipesDetailModal");
+const button = document.getElementById("btn");
 const refeshRecipesContainer = () => {
     console.log("mettre les recipes de mon tableau dans mon dom");
     // console.log(selectedRecipe.name);
     // console.log(selectedRecipe.prepTime);
     // console.log(selectedRecipe.cookTime);
     recipesContainer.innerHTML = "";
-    preTimebtn.innerHTML = "";
     recipesTab.forEach(recipe => {
         const newButton = document.createElement("button");
         newButton.innerHTML = `<b>${recipe.name}</b><hr> ${recipe.cookTime} <i class="bi bi-fire"></i> ${recipe.prepTime}`;
         newButton.className = recipe === selectedRecipe ? "btn btn-light w-100 my-2" : "btn btn-outline-light w-100 my-2";
         newButton.addEventListener('click', () => {
             selectedRecipe = recipe;
+            console.log(selectedRecipe);
+            displayModal.style.display = "block";
+            nameDetail.innerHTML = recipe.name;
+            instructionsDetail.innerHTML = `${recipe.instructions}`;
             refeshRecipesContainer();
         });
         recipesContainer.appendChild(newButton);
