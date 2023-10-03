@@ -7,7 +7,7 @@ const DiplayHookComponent = (props) =>{
 
    
     const addFirstName = (event) => {
-        setfName(event.target.value.charAt(0).toUpperCase()+ fName.slice(1))
+        setfName(event.target.value.charAt(0).toUpperCase()+ event.target.value.slice(1))
         console.log(fName);
     }
     const addLastName = (event) => {
