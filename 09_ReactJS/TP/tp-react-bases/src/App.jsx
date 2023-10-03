@@ -4,12 +4,13 @@ import './App.css';
 //import 'bootstrap/dist/css/bootstrap.min.css'
 //import'bootstrap-icons/font/bootstrap-icons.min.css'
 //import DisplayTab from './Components/ExReactB';
-import ListElement from './Components/ExReactC';
+//import ListElement from './Components/ExReactC';
+import DiplayHookComponent from './Components/ExReactD';
 function App() {
   return (
     <div className="App">
-      <ListElement />
-
+      {/* <ListElement /> */}
+      <DiplayHookComponent/>
      </div> 
   ); 
 }
