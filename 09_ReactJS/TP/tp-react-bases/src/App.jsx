@@ -5,14 +5,21 @@ import './App.css';
 //import'bootstrap-icons/font/bootstrap-icons.min.css'
 //import DisplayTab from './Components/ExReactB';
 //import ListElement from './Components/ExReactC';
-import DiplayHookComponent from './Components/ExReactD';
+//import DiplayHookComponent from './Components/ExReactD';
+import { useState } from 'react';
+//import FizzBuzz from './Components/ExReactE';
 function App() {
+  const [currentValue, setCurrentValue] =useState (0)
   return (
-    <div className="App">
+    <>
       {/* <ListElement /> */}
-      <DiplayHookComponent/>
-     </div> 
-  ); 
+      {/* <DiplayHookComponent/> */}
+      {/* <FizzBuzz maxValue={100} /> */}
+
+    </> 
+      
+   
+  )
 }
 
 export default App;
