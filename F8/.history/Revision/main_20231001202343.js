@@ -1,0 +1,2 @@
+//spread (...)
+le obj1 = 
