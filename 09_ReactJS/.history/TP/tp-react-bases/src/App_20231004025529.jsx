@@ -14,7 +14,6 @@ function App() {
   return (
     <MysteryNumber myMysteryNumber = {12}/>
     
-    
       
       
   )

@@ -31,8 +31,8 @@ const MysteryNumber = (myMysteryNumber)=>{
         
         {/* <p>My mystery number : <b>{isRightInput ? 'You win!' : 'Try again!'}</b> </p> */}
        
-        {isRightInput && <p>You win !!!</p>}
-        {!isRightInput && <p>Try again !!!  </p>}
+        {isRightInput && <p><b>You win !!!</b></p>}
+        {!isRightInput && <p>Try again !!! My mystery number is :{inputA}* {inputB} = 12 )</p>}
       
         </>
     )

@@ -6,16 +6,15 @@ import './App.css';
 //import DisplayTab from './Components/ExReactB';
 //import ListElement from './Components/ExReactC';
 //import DiplayHookComponent from './Components/ExReactD';
-//import { useState } from 'react';
+import { useState } from 'react';
 //import FizzBuzz from './Components/ExReactE';
 import MysteryNumber from './Components/NombreMystere';
 function App() {
   
   return (
-    <MysteryNumber myMysteryNumber = {12}/>
-    
     
       
+      <MysteryNumber myMysteryNumber = {12}/>
       
   )
 }

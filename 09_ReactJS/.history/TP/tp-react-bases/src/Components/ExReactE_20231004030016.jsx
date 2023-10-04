@@ -36,7 +36,7 @@ function FizzBuzz ({maxValue}) {
             <button onClick={Increment} disabled ={currentValue === maxValue}> + </button>
             <button onClick={Decrement} disabled ={currentValue === 0}> - </button>
             <p>Result : {result}</p>
-        </div>
+        </dir>
         </>
     )
 }

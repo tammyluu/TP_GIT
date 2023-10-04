@@ -18,22 +18,18 @@ const MysteryNumber = (myMysteryNumber)=>{
     return (
         <>
         <div className="row">
-            <div className="col-6" text-center></div>
-            <label htmlFor="inputA">Your first number</label>
-            <input type="text" value={inputA} onInput={inputAHandle} />
+            <div className="col-6" ></div>
+
         </div>
-        <div className="row">
-            <div className="col-6" text-center></div>
-            <label htmlFor="inputB">Your second number</label>
-            <input type="text" value={inputB} onInput={inputBHandle} />
-        </div>
-        
-        
+        <label htmlFor="inputA">fyour first number</label>
+        <input type="text" value={inputA} onInput={inputAHandle} />
+        <label htmlFor="inputB">Your second number</label>
+        <input type="text" value={inputB} onInput={inputBHandle} />
         {/* <p>My mystery number : <b>{isRightInput ? 'You win!' : 'Try again!'}</b> </p> */}
        
         {isRightInput && <p>You win !!!</p>}
-        {!isRightInput && <p>Try again !!!  </p>}
-      
+        {!isRightInput && <p>Try again !!!</p>}
+        <p>My mystery number is : `(${inputA}* ${inputB} = 12 )`</p>
         </>
     )
 

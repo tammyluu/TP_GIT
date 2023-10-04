@@ -12,10 +12,9 @@ import MysteryNumber from './Components/NombreMystere';
 function App() {
   
   return (
-    <MysteryNumber myMysteryNumber = {12}/>
-    
     
       
+      <MysteryNumber myMysteryNumber = {12}/>
       
   )
 }

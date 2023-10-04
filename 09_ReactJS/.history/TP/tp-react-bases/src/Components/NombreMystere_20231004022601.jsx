@@ -13,27 +13,13 @@ const MysteryNumber = (myMysteryNumber)=>{
     useEffect(()=>{
         const multify = inputA * inputB
         multify === 12 ? setRightInput(true) :setRightInput(false)
-       
     },[inputA, inputB])
     return (
         <>
-        <div className="row">
-            <div className="col-6" text-center></div>
-            <label htmlFor="inputA">Your first number</label>
-            <input type="text" value={inputA} onInput={inputAHandle} />
-        </div>
-        <div className="row">
-            <div className="col-6" text-center></div>
-            <label htmlFor="inputB">Your second number</label>
-            <input type="text" value={inputB} onInput={inputBHandle} />
-        </div>
-        
-        
+        <input type="text" value={inputA} onInput={inputAHandle} />
+        <input type="text" value={inputB} onInput={inputBHandle} />
         {/* <p>My mystery number : <b>{isRightInput ? 'You win!' : 'Try again!'}</b> </p> */}
-       
-        {isRightInput && <p>You win !!!</p>}
-        {!isRightInput && <p>Try again !!!  </p>}
-      
+        
         </>
     )
 

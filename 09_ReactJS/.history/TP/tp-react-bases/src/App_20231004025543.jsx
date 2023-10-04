@@ -13,7 +13,7 @@ function App() {
   
   return (
     <MysteryNumber myMysteryNumber = {12}/>
-    
+    <MysteryNumber c = {12}/>
     
       
       
