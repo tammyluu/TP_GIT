@@ -1,57 +1,43 @@
-import Timer from './components/Timer';
+//import Timer from './components/Timer';
 import './App.css';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 function App() {
-  const [timers, setTimers] = useState([])
-  const [timerName, setTimerName] = useState('')
-  const [timerDuration, setTimerDuration]= useState(0)
-  const [timerId, setTimerId] = useState (false)
-  const handleCreateTimer = () => {
-    if (timers.length < 5 && timerName && timerDuration > 0) {
-      setTimers([...timers, { id: timerId, name: timerName, duration: timerDuration }]);
-      setTimerId(timerId + 1);
-      setTimerName('');
-      setTimerDuration(0);
-    }
-    const handleDeleteTimer = (id) => {
-      const updatedTimers = timers.filter((timer) => timer.id !== id);
-      setTimers(updatedTimers);
-    };
   
-  return (
-    <div className="App">
-    <h1>Minuteurs</h1>
-      <div className="timer-form">
-        <input
-          type="text"
-          placeholder="Nom du minuteur"
-          value={timerName}
-          onChange={(e) => setTimerName(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Durée (en secondes)"
-          value={timerDuration}
-          onChange={(e) => setTimerDuration(e.target.value)}
-        />
-        <button onClick={handleCreateTimer}>Créer Minuteur</button>
+  //const {timers} = props
+  const [time, setTime] = useState(20)
+  const timerId =useRef()
+  const prevTime = useRef()
+
+  
+  useEffect(() =>{
+      prevTime.current = time
+  },[time])
+  const handleStart = () =>{
+      //formatDate()
+      timerId.current = setInterval(() =>{
+          setTime( prevTime => prevTime - 1)
+      }, 1000)
+     
+      console.log('Start ->', timerId.current);
+  }    
+ 
+  const handleStop = () => {
+    
+      clearInterval(timerId.current)
+      console.log('stop ->', timerId.current);
+  }
+  console.log(timerId.current,prevTime.current);
+   return (
+      <div className="timer">
+          <div className="timer-info">
+              <p style={{fontSize : '42px', padding : 20}}>{time}</p>
+              
+          </div>
+          <button onClick={handleStart}>Start</button>
+          <button onClick={ handleStop}>Stop</button>
       </div>
-      <div className="timer-list">
-        {timers.map((timer) => (
-          <Timer
-            key={timer.id}
-            id={timer.id}
-            name={timer.name}
-            duration={timer.duration}
-            onDelete={handleDeleteTimer}
-            //onTimerEnd={() => setPlaySound(true)}
-          />
-        ))}
-      </div>
-      <Timer/>
-    </div>
-  );
+  )
 }
-}
+
 export default App;

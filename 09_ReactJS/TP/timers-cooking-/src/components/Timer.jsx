@@ -1,36 +1,40 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 
 
 
 function Timer (props){
     const {timers} = props
-    const [time, setTdime] = useState('')
-    const formatDate() => {
-        if (!date) return ''
-        const hours = `0{date.getHours()}`.slice(-2)
-        const minutes = `0{date.getMinutes()}`.slice(-2)
-        const secondes = `0{date.getSecondes()}`.slice(-2)
-        return `${hours} : ${minutes} : ${secondes}`
-    }
+    const [time, setTime] = useState('')
+    const timerId =useRef()
+    const prevTime = useRef()
+
+    
     useEffect(() =>{
-        const timeInterval = setInterval(()=>{
-            const currentTime = new Date()
-            const newTime =  formatDate(currentTime)
-            setTime(newTime)
-         }, 1000)
-         return () =>{
-            console.log("time clean up")
-            clearInterval(timeInterval)
-         }
-     }, [])   
+        prevTime.current = time
+    },[time])
+    const handleStart = () =>{
+        //formatDate()
+        timerId.current = setInterval(() =>{
+            setTime( prevTime => prevTime - 1)
+        }, 1000)
+       
+        console.log('Start ->', timerId.current);
+    }    
+   
+    const handleStop = () => {
+        clearInterval(timerId.current)
+        console.log('stop ->', timerId.current);
+    }
+    console.log(time,prevTime.current);
      return (
         <div className="timer">
             <div className="timer-info">
-                <p style={{fontSize : '42px'}}>{time}</p>
+                <p style={{fontSize : '42px', padding : 20}}>{time}</p>
                 
             </div>
-            <button onClick={() =>onDelete(id)}>Supprimer</button>
+            <button onClick={handleStart}>Start</button>
+            <button onClick={handleStop}>Stop</button>
         </div>
     )
     }  
