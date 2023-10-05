@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-
-
-
-
+import { ReactPropTypes } from "react";
+Time.
 function Timer (props){
     const {timers} = props
     const [time, setTdime] = useState('')
@@ -35,7 +33,7 @@ function Timer (props){
     )
     }  
    
-    // const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
+    //const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
     export default Timer  
 
    

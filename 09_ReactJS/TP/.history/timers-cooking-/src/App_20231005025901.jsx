@@ -37,19 +37,7 @@ function App() {
         />
         <button onClick={handleCreateTimer}>Créer Minuteur</button>
       </div>
-      <div className="timer-list">
-        {timers.map((timer) => (
-          <Timer
-            key={timer.id}
-            id={timer.id}
-            name={timer.name}
-            duration={timer.duration}
-            onDelete={handleDeleteTimer}
-            //onTimerEnd={() => setPlaySound(true)}
-          />
-        ))}
-      </div>
-      <Timer/>
+        
     </div>
   );
 }

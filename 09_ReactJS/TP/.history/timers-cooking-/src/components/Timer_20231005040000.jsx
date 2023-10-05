@@ -1,18 +1,9 @@
 import { useState, useEffect } from "react";
 
-
-
-
 function Timer (props){
     const {timers} = props
-    const [time, setTdime] = useState('')
-    const formatDate() => {
-        if (!date) return ''
-        const hours = `0{date.getHours()}`.slice(-2)
-        const minutes = `0{date.getMinutes()}`.slice(-2)
-        const secondes = `0{date.getSecondes()}`.slice(-2)
-        return `${hours} : ${minutes} : ${secondes}`
-    }
+    const [time, setTime] = useState('')
+    
     useEffect(() =>{
         const timeInterval = setInterval(()=>{
             const currentTime = new Date()
@@ -23,7 +14,14 @@ function Timer (props){
             console.log("time clean up")
             clearInterval(timeInterval)
          }
-     }, [])   
+     }, [])  
+     const formatDate(date) => {
+        if (!date) return ''
+        const hours = `0{date.getHours()}`.slice(-2)
+        const minutes = `0{date.getMinutes()}`.slice(-2)
+        const secondes = `0{date.getSecondes()}`.slice(-2)
+        return `${hours} : ${minutes} : ${secondes}`
+    } 
      return (
         <div className="timer">
             <div className="timer-info">
@@ -35,7 +33,7 @@ function Timer (props){
     )
     }  
    
-    // const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
+    //const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
     export default Timer  
 
    

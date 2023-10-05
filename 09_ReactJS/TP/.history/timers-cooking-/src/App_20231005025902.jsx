@@ -45,11 +45,10 @@ function App() {
             name={timer.name}
             duration={timer.duration}
             onDelete={handleDeleteTimer}
-            //onTimerEnd={() => setPlaySound(true)}
+            onTimerEnd={() => setPlaySound(true)}
           />
         ))}
       </div>
-      <Timer/>
     </div>
   );
 }

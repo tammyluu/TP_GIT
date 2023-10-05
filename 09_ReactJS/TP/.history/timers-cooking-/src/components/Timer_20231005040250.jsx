@@ -1,11 +1,8 @@
 import { useState, useEffect } from "react";
 
-
-
-
 function Timer (props){
     const {timers} = props
-    const [time, setTdime] = useState('')
+    const [time, <setTd>te</setTd>ime] = useState('')
     const formatDate() => {
         if (!date) return ''
         const hours = `0{date.getHours()}`.slice(-2)
@@ -35,7 +32,7 @@ function Timer (props){
     )
     }  
    
-    // const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
+    //const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
     export default Timer  
 
    

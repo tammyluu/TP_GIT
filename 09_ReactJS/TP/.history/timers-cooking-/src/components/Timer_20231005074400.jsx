@@ -35,7 +35,7 @@ function Timer (props){
     )
     }  
    
-    // const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
+    const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
     export default Timer  
 
    

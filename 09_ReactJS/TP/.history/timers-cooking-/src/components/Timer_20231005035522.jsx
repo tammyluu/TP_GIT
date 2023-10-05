@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 
-
-
-
 function Timer (props){
     const {timers} = props
-    const [time, setTdime] = useState('')
-    const formatDate() => {
+    const [time, setTime] = useState('')
+    const formatDate(date) => {
         if (!date) return ''
         const hours = `0{date.getHours()}`.slice(-2)
         const minutes = `0{date.getMinutes()}`.slice(-2)
@@ -14,14 +11,13 @@ function Timer (props){
         return `${hours} : ${minutes} : ${secondes}`
     }
     useEffect(() =>{
-        const timeInterval = setInterval(()=>{
+        setInterval(()=>{
             const currentTime = new Date()
             const newTime =  formatDate(currentTime)
             setTime(newTime)
          }, 1000)
          return () =>{
-            console.log("time clean up")
-            clearInterval(timeInterval)
+            cgl
          }
      }, [])   
      return (
@@ -35,7 +31,7 @@ function Timer (props){
     )
     }  
    
-    // const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
+    //const formattedTime = `${Math.floor(time/60)} : ${(time % 60).toString().padStart(2,'0')}`
     export default Timer  
 
    
