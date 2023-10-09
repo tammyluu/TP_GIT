@@ -17,7 +17,7 @@ const TaskForm =() =>{
        const newTask = new Task(name, deadline, isFinished)
         setTasks((preTask) => [...preTask, (newTask)])
         console.log(newTask);
-        setTasks("")
+       // setTasks("")
 
     }
 
@@ -37,7 +37,7 @@ const TaskForm =() =>{
                 < select id="task" className="form-control" ref={isFinishedRef} required>
                     <option value="">Select option</option>
                         {status.map((option) => (
-                            <option value={option}>{option}</option>
+                            <option key={option} value={option}>{option}</option>
                         ))}
                 </select>
             </div>
