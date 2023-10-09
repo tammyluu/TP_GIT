@@ -1,0 +1,22 @@
+class Task {
+    constructor (_id, _name, _dea, _isFinish){
+        this._id = ++ id
+        this._name = _name
+        this._date = _date
+        this._isFinish = false
+    }
+    get id(){
+        return this._id
+    }    
+    get name (){
+        return this._name
+    }
+    get date (){
+        return this._date
+    }
+    deadline() {
+        this._date - (new Date().getDate())
+        return deadline
+    }
+}
+export default Task

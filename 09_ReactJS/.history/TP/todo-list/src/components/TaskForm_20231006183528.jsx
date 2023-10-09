@@ -1,0 +1,31 @@
+import { useContext, useEffect, useRef } from "react";
+import Task from "../model/Task"
+import { TaskContext } from "../Context/TaskContext";
+
+const TaskForm =() =>{
+    const context = useContext (TaskContext)
+    const {setTasks} = context
+    const nameTaskRef = useRef()
+    const deadlineRef = useRef()
+    const isFinish = useRef()
+    const submitHandle = (e) =>{
+        e.preventDefault()
+        const name = nameTaskRef.current.value
+        const deadline = deadlineRef.current.value
+        //const isFinish = isFinish.current.value
+        const newTask = new Task (name, deadline, isFinish)
+        setTasks((preTask) => [...preTask, newTask])
+        console.log(newTask);
+
+    }
+
+    return (
+
+        <>
+       form
+        
+        </>
+    )
+}
+export default TaskForm
+
