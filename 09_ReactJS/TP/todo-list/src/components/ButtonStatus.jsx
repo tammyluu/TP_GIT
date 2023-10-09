@@ -5,9 +5,9 @@ import TaskForm from "./TaskForm";
 const status = ["Todo", "Doing", "Done"]
 const ButtonStatus = (props) => {
   
-    const context = useContext (TaskContext)
+    //const context = useContext (TaskContext)
     const {idTask, isFinished} = props
-    const foundTask = context.tasks.find(task => task.id === idTask)
+   // const foundTask = context.tasks.find(task => task.id === idTask)
     const [statusT, setStatusT] =useState(isFinished)
 
     const statusChanged = ()=>{

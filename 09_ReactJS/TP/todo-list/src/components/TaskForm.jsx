@@ -14,9 +14,9 @@ const TaskForm =() =>{
         const name = nameTaskRef.current.value
         const deadline = deadlineRef.current.value
         const isFinished = isFinishedRef.current.value
-       const newTask = new Task(name, deadline, isFinished)
-        setTasks((preTask) => [...preTask, (newTask)])
-        console.log(newTask);
+       //const newTask = new Task(name, deadline, isFinished)
+        setTasks((preTask) => [...preTask, (name, deadline, isFinished)])
+        console.log(setTasks);
        // setTasks("")
 
     }
