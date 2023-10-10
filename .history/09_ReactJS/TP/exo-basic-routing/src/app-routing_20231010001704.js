@@ -9,13 +9,7 @@ import Contact from "./routes/Contact"
 
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children:[
-
-      {
+    {
         path: "/",
         element: <Accueil />
       },
@@ -31,8 +25,6 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <Contact/>
       },
-    ]
-  }
     ]);
         
 
