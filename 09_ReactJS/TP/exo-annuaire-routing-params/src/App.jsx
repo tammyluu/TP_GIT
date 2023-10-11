@@ -1,19 +1,20 @@
-
+import { useState } from 'react';
+import ContactDiplayForm from './routes/ContactDiplayForm';
 import NavBar from './routes/Navbar';
 
 
 
 function App() {
-  
+ const [contacts, setContacts]=useState([]) 
  
   return (
     <>
     <NavBar/>
-          {/* <div>
+           <div>
             {contacts.map(contact =>(
-                <ContactDiplayForm key={contact} nameContact ={contact}/>
+                <ContactDiplayForm key={contact} idContact ={contact}/>
             ))}
-          </div> */}
+          </div> 
     
     </>
        

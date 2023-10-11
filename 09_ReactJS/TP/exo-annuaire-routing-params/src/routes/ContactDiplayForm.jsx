@@ -3,9 +3,10 @@ import { useNavigate, useParams, useSearchParams } from "react-router-dom"
 import { AnnuaireContext } from "../contexts/AnnuaireContact"
 import { useContext } from "react"
 
+
 const ContactDiplayForm =(props) =>{
     const {idContact} = props
-    const {contacts} = useContext()
+    const {contacts,setContacts} = useContext(AnnuaireContext)
     
 
     const navigate = useNavigate()
