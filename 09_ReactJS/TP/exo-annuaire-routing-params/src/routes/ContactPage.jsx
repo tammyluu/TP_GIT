@@ -1,9 +1,10 @@
 import { useRef,useContext } from "react"
 import { useNavigate } from "react-router-dom"
+import { AnnuaireContext } from "../contexts/AnnuaireContact"
 
 const ContactPage = () => {
     const navigate = useNavigate()  
-    //const {contacts, setContacts} = useContext()
+    const {contacts, setContacts} = useContext(AnnuaireContext)
 
     const senderMailRef = useRef()
     const lastnameRef = useRef()
