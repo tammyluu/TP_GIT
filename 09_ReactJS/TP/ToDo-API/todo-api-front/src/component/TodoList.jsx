@@ -1,7 +1,7 @@
-import { useContext,useState } from "react"
+import { useContext,useEffect,useState } from "react"
 import TodoContext from "../context/TodoContext"
 import TodoForm from "./TodoForm"
-
+import axios from "axios"
 const TodoList = (todoId ) =>{
   
   const [todos, setTodos ] = useContext(TodoContext)
@@ -9,6 +9,8 @@ const TodoList = (todoId ) =>{
 
   const todo = todos.find(t => t.id === todoId)
   console.log(todo);
+  
+  
 
  return(
     <>
