@@ -15,7 +15,7 @@ const ProductItem = (props)=>{
         <>
             <tr>
                 <th scope="row">{product.title}</th>
-                <td>{product.price}</td>
+                <td>{product.price} €</td>
                 {/* <td>{product.isDisposed ? "Disponible" : "Rupture de stock"}</td> */}
                 <td>
                 <button className="btn btn-danger mx-3" onClick={() => dispatch(deleteProduct(product.id))}>Supprimer</button>

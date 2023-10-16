@@ -24,7 +24,7 @@ const AddProduct = ()=>{
             <label htmlFor="form-control form-control-lg" >Nom de produit</label><br/>
             <input className="form-control" type = "text" ref={tittleRef}/><br/>
             <label htmlFor="form-control form-control-lg">Prix de produit</label><br/>
-             <input className="form-control"type = "text" ref={priceRef}/><br/> 
+             <input className="form-control"type = "number" ref={priceRef}/><br/> 
                 
             <button  className="btn btn-success" onClick={handleSubmit}>Submit</button>      
             </form>
