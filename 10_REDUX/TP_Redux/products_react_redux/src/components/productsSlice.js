@@ -8,7 +8,7 @@ const productsSlice = createSlice({
             {id : 2,  title : "Poire", price : "1€", isDisposed :true}, */
         ],
             
-    counterProduct : 1
+    
     },
     reducers :{
         addProduct: (state, action) =>{
@@ -19,7 +19,7 @@ const productsSlice = createSlice({
               isDisposed : false
              }
              state.products.push(newProduct)
-             state.counterProduct += 1
+           
          },
         deleteProduct: (state, action) => {  
             state.products = state.products.filter(product => product.id!== action.payload)
@@ -27,9 +27,10 @@ const productsSlice = createSlice({
          }  ,
         
          editProduct: (state, action) => {
-            const product = state.products.map(product => product.id === action.payload)
-            product.title = action.payload.title
-            product.price = action.payload.price
+            const index = state.products.findIndex(product => product.id === action.payload)
+           if (index!== -1) {
+            state.products[index] = action.payload
+           }
          },
         changeStatusProduct: (state, action) => {
             const product = state.products.find(product => product.id === action.payload)

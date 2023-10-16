@@ -7,7 +7,7 @@ const ProductList=() =>{
     return (
         <>
             <h2>Application de gestion de produits</h2>
-           <table className="table">
+           <table className="table mt-5">
                 <thead>
                     <tr>
                     <th scope="col">Nom</th>
