@@ -21,16 +21,11 @@ const AddProduct = ()=>{
 
             <h2>Ajouter un produit</h2>
             <form >
-            <label htmlFor="title ">Nom de produit</label><br/>
-            <input
-            type = "text"
-            placeholder="ajouter un nom de produit"
-            ref={tittleRef}/><br/>
-            <label htmlFor="price">Prix de produit</label><br/>
-             <input
-            type = "text"
-            placeholder="ajouter le prix de produit"
-            ref={priceRef}/><br/> 
+            <label htmlFor="form-control form-control-lg" >Nom de produit</label><br/>
+            <input className="form-control" type = "text" ref={tittleRef}/><br/>
+            <label htmlFor="form-control form-control-lg">Prix de produit</label><br/>
+             <input className="form-control"type = "text" ref={priceRef}/><br/> 
+                
             <button  className="btn btn-success" onClick={handleSubmit}>Submit</button>      
             </form>
             

@@ -1,19 +1,13 @@
 import { useDispatch } from "react-redux";
-import{ deleteProduct,changeStatusProduct, editProduct} from "./productsSlice"
-
+import{ deleteProduct,editProduct} from "./productsSlice"
+import { useRef } from "react";
 const ProductItem = (props)=>{
     const product = props.product
     const dispatch = useDispatch();
-    /* const inputTitleRef = useRef(true);
+    const inputTitleRef = useRef(true);
     const inputPriceRef = useRef(true);
 
-    const edit = (id, value,e )=>{
-      if (e.which === id) {
-        editProduct({id, title : value, price:value})
-       inputTitleRef.current.disable =true
-       inputPriceRef.current.disable =true
-      }
-    } */
+    editProduct ({title: inputTitleRef.current.value,price: inputPriceRef.current.value})
    
     
 
@@ -25,7 +19,7 @@ const ProductItem = (props)=>{
                 {/* <td>{product.isDisposed ? "Disponible" : "Rupture de stock"}</td> */}
                 <td>
                 <button className="btn btn-danger mx-3" onClick={() => dispatch(deleteProduct(product.id))}>Supprimer</button>
-                    <button className="btn btn-success" onClick={() => dispatch( handleSave(product.id))}>Modifier</button>
+                    <button className="btn btn-success" onClick={() => dispatch( editProduct(product.id))}>Modifier</button>
                 </td>
             </tr> 
         </>   

@@ -4,8 +4,8 @@ const productsSlice = createSlice({
     name: 'product',
     initialState: {
         products :[
-            {id : 1,  title: "Pomme", price : "1.5€", isDisposed :false},
-            {id : 2,  title : "Poire", price : "1€", isDisposed :true},
+           /*  {id : 1,  title: "Pomme", price : "1.5€", isDisposed :false},
+            {id : 2,  title : "Poire", price : "1€", isDisposed :true}, */
         ],
             
     counterProduct : 1
