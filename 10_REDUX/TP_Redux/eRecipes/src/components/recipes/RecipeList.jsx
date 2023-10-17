@@ -8,7 +8,7 @@ const RecipeList = () =>{
         <>
         <form>
             <h2>Recipes List</h2>
-            <button className="btn btn-success"><i class="bi bi-plus-circle"></i>Add</button>
+            <button className="btn btn-success"><i className="bi bi-plus-circle"></i>Add</button>
             <hr />
            
             <table className="table mt-5">
@@ -26,8 +26,8 @@ const RecipeList = () =>{
                     <RecipeItem key={i} recipe={recipe}/>
                 ))} 
             </tbody>
-            <button className="btn btn-warning"><i class="bi bi-pencil-square"></i>Edite</button>
-            <button className="btn btn-danger"><i class="bi bi-trash3-fill"></i>Delete</button>
+            <button className="btn btn-warning"><i className="bi bi-pencil-square"></i>Edite</button>
+            <button className="btn btn-danger"><i className="bi bi-trash3-fill"></i>Delete</button>
         </form>
         
         
