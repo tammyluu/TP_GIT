@@ -1,5 +1,5 @@
 # Logs
-./fireBaseConfig.json
+src/fireBaseConfig.js
 logs
 *.log
 npm-debug.log*
