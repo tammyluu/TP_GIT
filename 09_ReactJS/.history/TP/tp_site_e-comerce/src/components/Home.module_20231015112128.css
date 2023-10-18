@@ -1,0 +1,8 @@
+css reset
+.courseist{
+    display: grid;
+    grid-template-columns:  repeat(4, 1fr);
+    grid-gap: 25px;
+    padding: 25px;
+    
+}

@@ -1,0 +1,76 @@
+import { Link } from "react-router-dom"
+import axios from "axios";
+import  { useEffect, useContext } from "react";
+import ProductContext from "../context/ProductContext";
+import {useNavigate, useParams } from "react-router-dom";
+import Header from "./Header";
+
+
+const DetailProduct = () =>{
+
+    const {id} = useParams();
+
+    const [products, setProducts,cart, setCart] = useContext(ProductContext);
+    
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get(`http://localhost:5000/products/${id}`)
+        .then (response => {
+            setProducts(response.data)})
+        }, [id])
+
+    
+
+    if (products == null) {
+
+        return <h3>Loading...</h3>
+
+    } 
+    
+    const onAddtoCartHandler=(product)=>{
+       const newProduct = {...product};
+       console.log(`course bought: ${newProduct.title}${newProduct.price}`);
+       setCart(pre =>[...cart, newProduct]);
+       console.log("panier: ", cart);
+        navigate("/cart")
+        }   
+    
+
+    return (
+
+        <>
+        <Header/>
+        <h1>Product Detail</h1>
+
+        <Link to={"/cart"}>Cart</Link>
+
+        <br></br>
+
+        <Link to={"/addProduct"}>Add Product</Link>
+
+        <br></br>
+
+        <Link to={"/"}>homepage</Link>
+
+        <br></br>
+
+        <h1>{product.title}</h1>
+        <div>
+            <img className="img-fluid" src={product.image} alt="image"/>
+        </div>
+        <ul>
+
+            <li>{product.description}</li>
+
+            <li>{product.price}</li>
+        
+        </ul>
+        <button onClick={onAddtoCartHandler}>Add to Cart</button>
+        </>
+
+    )
+
+}
+
+export default DetailProduct

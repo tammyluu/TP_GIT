@@ -1,0 +1,29 @@
+{
+    "products" :[
+        {
+            "id": 1,
+            "title": "Javascript",
+            "description": "Beginner",
+            "price": "$190",
+            "product_image": "images/javascript.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Typescript",
+            "description": "Advanced",
+            "price": "$250"
+        },
+        {
+            "id": 2,
+            "title": "Ruby",
+            "description": "Advanced",
+            "price": "$500"
+        },
+        {
+            "id": 2,
+            "title": "Java",
+            "description": "From A to Z",
+            "price": "$150"
+        }
+    ]
+}
