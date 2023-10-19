@@ -39,11 +39,13 @@ function App() {
               {user && <button className='btn btn-success' onClick={() => dispatch(setFormMode("add"))}>Add</button>}
             </div>
             <hr />
+            <div className='d-flex align-items-center'>
             {
               albums.length === 0 ? (
                 <p>There is no album</p>
               ) : albums.map(album => <AlbumDisplay key={album.id} album={album} />)
             }
+            </div>
           </div>
         </div>
       </main>

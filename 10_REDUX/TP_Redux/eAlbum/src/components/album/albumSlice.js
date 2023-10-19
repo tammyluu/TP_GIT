@@ -31,12 +31,41 @@ export const postAlbums = createAsyncThunk (
         }
     }
 )
+export const deleteAlbum = createAsyncThunk (
+    'albumItems/deleteAlbums',
+    async (album) => {
+        const token = localStorage.getItem("token")
+        const response = await fetch(BASE_DB_URL + `/eAlbums/${album}.json?auth=${token}`, {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application.json' },
+        })
+        const data = await response.json()
+        return album
+
+    }
+)
+export const editAlbum = createAsyncThunk (
+    'albumItems/editAlbums',
+    async (patchAlbum) => {
+        const token = localStorage.getItem("token")
+        const response = await fetch(BASE_DB_URL + `/eAlbums/${patchAlbum.id}.json?auth=${token}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application.json' },
+            body: JSON.stringify(patchAlbum)
+        })
+        const data = await response.json()
+        return {
+            id: data.title,
+            ...patchAlbum
+        }
+    }
+)
 const albumSlice = createSlice({
     name: "albumItems",
     initialState: {
         formMode: "",
         albums: [],
-        selectedAlbums: null
+        selectedAlbum: null
     },
     reducers: {
         setFormMode: (state, action) => {
@@ -44,7 +73,7 @@ const albumSlice = createSlice({
             console.log(action.payload);
         },
          setSelectedAlbum: (state, action) => {
-            state.selectedAlbums = action.payload
+            state.selectedAlbum = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -56,7 +85,23 @@ const albumSlice = createSlice({
             state.albums.push(action.payload)
             console.log(action.payload);
         })
+        builder.addCase(editAlbum.fulfilled, (state, action) => {
+           let foundAlbum = state.albums.find(album => album.id === action.payload.id)
+            if(foundAlbum){
+                state.albums = [...state.albums.filter(album => album.id!== action.payload.id), action.payload]
+            }
+        })
+
+        builder.addCase(deleteAlbum.fulfilled, (state, action) => {
+           
+            let foundAlbum = state.albums.find(album => album.id === action.payload)
+            console.log(action.payload);
+            if (foundAlbum) {
+                state.albums = state.albums.filter(album => album.id!== action.payload)
+                console.log(foundAlbum)
+            }
+        })
     }
 })
 export default albumSlice.reducer
-export const { setFormMode , setSelectedAlbum} = albumSlice.actions
+export const { setFormMode , setSelectedAlbum, selectedAlbum} = albumSlice.actions
