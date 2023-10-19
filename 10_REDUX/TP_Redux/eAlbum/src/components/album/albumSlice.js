@@ -1,5 +1,6 @@
-import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
-import {BASE_DB_URL} from '../firebaseConfig'
+import {configureStore, createAsyncThunk, createSlice} from '@reduxjs/toolkit'
+import { BASE_DB_URL } from '../../firebaseConfig'
+
 
 
 export const fetchAlbum = createAsyncThunk (
@@ -32,14 +33,25 @@ export const postAlbums = createAsyncThunk (
 const albumSlice = createSlice({
     name: "albumItems",
     initialState: {
+        formMode: "",
         albums: []
     },
-    reducers: {},
+    reducers: {
+        setFormMode: (state, action) => {
+            state.formMode = action.payload
+            console.log(action.payload);
+        }
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchAlbum.fulfilled, (state, action) => {
             state.albums = action.payload
             console.log(state.albums)
         })
+        builder.addCase(postAlbums.fulfilled, (state, action) => {
+            state.albums.push(action.payload)
+            console.log(action.payload);
+        })
     }
 })
 export default albumSlice.reducer
+export const { setFormMode } = albumSlice.actions

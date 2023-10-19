@@ -1,10 +1,11 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { SIGN_IN_URL, SIGN_UP_URL } from '../firebaseConfig'
+import { SIGN_IN_URL, SIGN_UP_URL } from '../../firebaseConfig';
 
 
 
-export const postSetUserSignin = createAsyncThunk(
-    "auth/postSetUserSignin",
+
+export const postSetUserSignIn = createAsyncThunk(
+    "auth/postSetUserSignIn",
     async (credentials) => {
         const response = await fetch(SIGN_IN_URL, {
             method: "POST",
@@ -20,8 +21,8 @@ export const postSetUserSignin = createAsyncThunk(
         return credentials
     })
 
-export const postSetUserSignup = createAsyncThunk(
-    "auth/postSetUserSignup",
+export const postSetUserSignUp = createAsyncThunk(
+    "auth/postSetUserSignUp",
     async (credentials) => {
         const response = await fetch(SIGN_UP_URL, {
             method: "POST",
@@ -50,7 +51,7 @@ const authSlice = createSlice({
     name: "auth",
     initialState: {
         user: null,
-        authMode: "SignIn",
+        authMode: "Sign In",
     },
     reducers: {
         setAuthMode: (state, action) => {
@@ -58,11 +59,11 @@ const authSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(postSetUserSignin.fulfilled, (state, action) => {
+        builder.addCase(postSetUserSignIn.fulfilled, (state, action) => {
             state.user = action.payload
             console.log(state.user);
         })
-        builder.addCase(postSetUserSignup.fulfilled, (state, action) => {
+        builder.addCase(postSetUserSignUp.fulfilled, (state, action) => {
             state.authMode = action.payload
             console.log(state.authMode);
         })

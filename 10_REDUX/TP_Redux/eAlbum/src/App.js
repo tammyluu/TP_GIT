@@ -1,11 +1,17 @@
 
 import './App.css';
-import { fetchAlbum } from './components/album/albumItemsslice';
-import SignForm from './components/auth/SignForm';
+import { fetchAlbum } from './components/album/albumSlice';
+//import SignForm from './components/auth/SignForm';
 import NavBar from './components/shared/NavBar';
-import { useDispatch } from'react-redux';
+import { useDispatch , useSelector} from'react-redux';
 import { useEffect } from'react';
-import AlbumForm from './components/album/AlbumForm';
+//import AlbumForm from './components/album/AlbumForm';
+import AlbumDisplay from './components/album/AlbumDiplay';
+import Modal from './components/shared/Modal';
+import AddAlbumForm from './components/album/AddAlbumForm';
+import EditAlbumForm from './components/album/EditAlbumForm';
+import DeleteAlbumForm from './components/album/DeleteAlbumForm';
+import { setFormMode } from './components/album/albumSlice';
 
 function App() {
   const user = useSelector(state => state.auth.user)

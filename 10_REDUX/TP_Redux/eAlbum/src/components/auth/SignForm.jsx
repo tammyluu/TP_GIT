@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setAuthMode, setUser } from "./authSlice";
+import { setAuthMode } from "./authSlice";
 import { useRef } from "react";
 import { SIGN_IN_URL, SIGN_UP_URL } from "../../firebaseConfig";
+import { postSetUserSignIn, postSetUserSignUp } from "./authSlice";
 
 const SignForm = () => {
     const authMode = useSelector(state => state.auth.authMode)
@@ -23,7 +24,7 @@ const SignForm = () => {
             returnSecureToken: true
         }
 
-         {authMode === "Se connecter" ?  (dispatch(postSetUserSignin(credentials))) : (dispatch(postSetUserSignup(credentials)))}
+         {authMode === "Sign In" ?  (dispatch(postSetUserSignIn(credentials))) : (dispatch(postSetUserSignUp(credentials)))}
      
     }
 
@@ -43,8 +44,8 @@ const SignForm = () => {
                 <button>{authMode}</button>
             </form>
             <button 
-                onClick={() => dispatch(setAuthMode(authMode === "SignIn" ? "Sign Up" : "Sign In"))}>
-                    {authMode === "SignIn" ? "Sign Up" : "Sign In"}
+                onClick={() => dispatch(setAuthMode(authMode === "Sign In" ? "Sign Up" : "Sign In"))}>
+                    {authMode === "Sign In" ? "Sign Up" : "Sign In"}
             </button>
         </>
      );
