@@ -23,11 +23,11 @@ import { setFormMode, setSelectedAlbum } from "./albumSlice"
 
         return (
             <>
-            <div className="col-3 bg-dark rounded border border-secondary text-light p-2 m-2">
+            <div className="col-3 bg-dark rounded border border-secondary text-light p-2">
                 <h5 className="card-title">{album.title}</h5>
                 <img src={album.coverURL} className="card-img-top" alt="" />
                 <ul className="list-group list-group-flush">
-                    <li className="list-group-item">Artist : {album.artist}</li>
+                    <li className="list-group-item">Artist : <strong>{album.artist}</strong></li>
                     <li className="list-group-item">Release date : {album.releaseDate}</li>
                     <li className="list-group-item">Score: {album.score}</li>
                     <li className="list-group-item">Price: {album.price} €</li>
