@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { setAuthMode } from "./authSlice";
 import { useRef } from "react";
-import { SIGN_IN_URL, SIGN_UP_URL } from "../../firebaseConfig";
+//import { SIGN_IN_URL, SIGN_UP_URL } from "../../firebaseConfig";
 import { postSetUserSignIn, postSetUserSignUp } from "./authSlice";
 
 const SignForm = () => {
@@ -47,6 +47,7 @@ const SignForm = () => {
                 onClick={() => dispatch(setAuthMode(authMode === "Sign In" ? "Sign Up" : "Sign In"))}>
                     {authMode === "Sign In" ? "Sign Up" : "Sign In"}
             </button>
+            
         </>
      );
 }

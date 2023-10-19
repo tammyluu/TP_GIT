@@ -18,7 +18,8 @@ export const fetchAlbum = createAsyncThunk (
 export const postAlbums = createAsyncThunk (
     'albumItems/postAlbums',
     async (newAlbum) => {
-        const response = await fetch(BASE_DB_URL + "/eAlbums.json", {
+        const token = localStorage.getItem("token")
+        const response = await fetch(BASE_DB_URL + `/eAlbums.json?auth=${token}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application.json' },
             body: JSON.stringify(newAlbum)
@@ -34,12 +35,16 @@ const albumSlice = createSlice({
     name: "albumItems",
     initialState: {
         formMode: "",
-        albums: []
+        albums: [],
+        selectedAlbums: null
     },
     reducers: {
         setFormMode: (state, action) => {
             state.formMode = action.payload
             console.log(action.payload);
+        },
+         setSelectedAlbum: (state, action) => {
+            state.selectedAlbums = action.payload
         }
     },
     extraReducers: (builder) => {
@@ -54,4 +59,4 @@ const albumSlice = createSlice({
     }
 })
 export default albumSlice.reducer
-export const { setFormMode } = albumSlice.actions
+export const { setFormMode , setSelectedAlbum} = albumSlice.actions
