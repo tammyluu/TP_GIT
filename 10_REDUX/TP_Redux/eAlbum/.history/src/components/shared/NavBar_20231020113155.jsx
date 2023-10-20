@@ -4,8 +4,6 @@ import Modal from "./Modal";
 import SignForm from "../auth/SignForm";
 import { useRef } from "react";
 import { setFilteredAlbums } from "../album/albumSlice";
-import "bootstrap-icons/font/bootstrap-icons.css";
-
 const NavBar = () => {
     const user = useSelector(state => state.auth.user)
     const authMode = useSelector(state => state.auth.authMode)
@@ -37,7 +35,7 @@ const NavBar = () => {
                     <form class="form-inline m-4" onSubmit={submitHandler}>
                     <div className="input-group mb-3">
 
-                        <input class="form-control  " type="search" placeholder="Search..." ref={searchRef} aria-label="Search" button />
+                        <input class="form-control mr-2 " type="search" placeholder="Search" ref={searchRef} aria-label="Search" button />
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"  >Search</button>
 
                     </div>
