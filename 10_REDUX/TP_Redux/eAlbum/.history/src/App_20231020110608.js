@@ -17,7 +17,7 @@ function App() {
   const user = useSelector(state => state.auth.user)
   const formMode = useSelector(state => state.albums.formMode)
   const albums = useSelector(state => state.albums.albums)
-  const filteredAlbum = useSelector(state => state.albums.filteredAlbum)
+  const fi
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,16 +38,15 @@ function App() {
             <div className='d-flex justify-content-between align-items-center'>
               <h3>Albums</h3>
               
-             
+              <input className="" id="myInput" type="text" placeholder="Search.."></input>
               {user && <button className='btn btn-success' onClick={() => dispatch(setFormMode("add"))}>Add</button>}
             </div>
             <hr />
             <div className='d-flex flex-wrap align-items-center'>
             {
-             filteredAlbum !== null ? <AlbumDisplay key={filteredAlbum.id} album={filteredAlbum[0]} /> :
-             albums.length === 0 ? (
-               <p>Il n'y a pas d'albums</p>
-             ) : albums.map(album => <AlbumDisplay key={album.id} album={album} />)
+              albums.length === 0 ? (
+                <p>There is no album</p>
+              ) : albums.map(album => <AlbumDisplay key={album.id} album={album} />)
             }
             </div>
           </div>

@@ -38,7 +38,7 @@ function App() {
             <div className='d-flex justify-content-between align-items-center'>
               <h3>Albums</h3>
               
-             
+              <input className="" id="myInput" type="text" placeholder="Search.."></input>
               {user && <button className='btn btn-success' onClick={() => dispatch(setFormMode("add"))}>Add</button>}
             </div>
             <hr />

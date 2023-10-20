@@ -79,7 +79,7 @@ const albumSlice = createSlice({
         formMode: "",
         albums: [],
         selectedAlbum: null,
-        filteredAlbum : null
+        filteredAlbum
     },
     reducers: {
         setFormMode: (state, action) => {

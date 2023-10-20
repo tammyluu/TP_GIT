@@ -78,8 +78,8 @@ const albumSlice = createSlice({
     initialState: {
         formMode: "",
         albums: [],
-        selectedAlbum: null,
-        filteredAlbum : null
+        selectedAlbum: null
+    
     },
     reducers: {
         setFormMode: (state, action) => {
@@ -91,7 +91,7 @@ const albumSlice = createSlice({
         },
         setFilteredAlbums: (state, action) => { 
             state.albums = state.albums.filter(album => album.title.toLowerCase().includes(action.payload))
-            console.log(state.filteredAlbum);
+            console.log(state.);
         }
        
     

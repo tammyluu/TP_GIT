@@ -20,7 +20,11 @@ import { setFormMode, setSelectedAlbum } from "./albumSlice"
         dispatch(setFormMode("delete"))
         console.log(formMode);
     }
-   
+   /*  const filterAlbumHandler = () => {
+        dispatch(setSelectedAlbum(album))
+        dispatch(setFormMode("filter"))
+        console.log(formMode);
+    } */
     
 
         return (
