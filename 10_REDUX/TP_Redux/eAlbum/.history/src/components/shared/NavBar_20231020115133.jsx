@@ -9,7 +9,6 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 const NavBar = () => {
     const user = useSelector(state => state.auth.user)
     const authMode = useSelector(state => state.auth.authMode)
-   
     const dispatch = useDispatch()
     const searchRef = useRef()
     
@@ -21,7 +20,12 @@ const NavBar = () => {
         searchRef.current.value = ""
     }
     
-    
+    const home = () => {
+        dispatch(setFilteredAlbums(null))
+        dispatch(fetchAlbum(album))
+        searchRef.current.value=" "
+   
+    }
 
 
     return ( 
@@ -36,7 +40,6 @@ const NavBar = () => {
             <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
                 <div className="container-fluid">
                     <span className="navbar-brand"><i className="bi bi-globe"></i> eAlbums</span>
-                    
                     <form class="form-inline m-4" onSubmit={submitHandler}>
                     <div className="input-group mb-3">
 
