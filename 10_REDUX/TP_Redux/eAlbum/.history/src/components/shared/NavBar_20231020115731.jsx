@@ -3,13 +3,13 @@ import { removeUser, setAuthMode } from "../auth/authSlice";
 import Modal from "./Modal";
 import SignForm from "../auth/SignForm";
 import { useRef } from "react";
-import { setFilteredAlbums } from "../album/albumSlice";
+import { setFilteredAlbums,fetchAlbum } from "../album/albumSlice";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 const NavBar = () => {
     const user = useSelector(state => state.auth.user)
     const authMode = useSelector(state => state.auth.authMode)
-   
+    const album = useSelector(state => state.albums.albums)
     const dispatch = useDispatch()
     const searchRef = useRef()
     

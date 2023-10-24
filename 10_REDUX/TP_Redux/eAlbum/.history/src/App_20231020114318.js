@@ -46,7 +46,7 @@ function App() {
             {
              filteredAlbum !== null ? <AlbumDisplay key={filteredAlbum.id} album={filteredAlbum[0]} /> :
              albums.length === 0 ? (
-               <p>There is no albums</p>
+               <p>Theralbums</p>
              ) : albums.map(album => <AlbumDisplay key={album.id} album={album} />)
             }
             </div>
