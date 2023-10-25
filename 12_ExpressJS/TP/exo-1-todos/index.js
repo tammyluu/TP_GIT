@@ -4,7 +4,7 @@ const app = express();
 
 app.use(express.json());
 
-const todos =[{}]
+const todos =[]
 app.get("/", (req, res) => {
     res.send("<h1>My list TodoS API!</h1>");
   });
@@ -27,7 +27,7 @@ app.put('/todos/:id', (req, res) => {
     const {titre, text, isDone} = req.body;
    const todoIndex = todos.findIndex(todo => todo.id === parseInt(req.params.id));
    if (todoIndex === -1) {
-    res.status(404).json(console.error('not exist'));
+    res.status(404).json(console.error('Todo not exist'));
     console.log(res.json);
    }else{
     todos[todoIndex] = {id, titre, text, isDone};
@@ -40,11 +40,11 @@ app.delete('/todos/:id', (req, res) => {
     const id = parseInt(req.params.id);
   const todoIndex = todos.findIndex(todo => todo.id === id);
   if (todoIndex === -1) {
-    res.status(404).json({ error: "Todo non trouvée" });
+    res.status(404).json({ error: "Todo not exist" });
   } else {
     todos.splice(todoIndex, 1);
     res.status(204).send();
-    cgl("todo is deleted");
+    console.log("todo is deleted");
   }
 });
 
