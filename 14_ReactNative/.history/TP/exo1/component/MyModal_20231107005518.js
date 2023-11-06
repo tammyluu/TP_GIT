@@ -54,13 +54,8 @@ const styles = StyleSheet.create({
     input : {
 
     },
-    addButton: {
-
-    },
+    addButton
     cancelButton: {
 
-    },
-    buttonText :{
-        
     }
 });

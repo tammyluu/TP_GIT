@@ -30,9 +30,9 @@ export default function List(){
                     <Text style={styles.myText}></Text>
                </View>
                 )
-           }} keyExtractor={(prod, index )=>{
-            
-           }}return index
+           }} keyExtractor={(p, i )=>{
+            re
+           }}
               
            />
 

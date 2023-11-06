@@ -45,22 +45,5 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 20,
         marginTop: 20,
-    },
-    buttonGroup : {
-        flexDirection: "row",
-        justifyContent: 'space-around',
-        width: '70%', 
-    },
-    input : {
-
-    },
-    addButton: {
-
-    },
-    cancelButton: {
-
-    },
-    buttonText :{
-        
     }
 });

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextInput,Button, Modal, Text, View, Image , TouchableOpacity, StyleSheet} from "react-native";
+import { Button, Modal, Text, View, Image } from "react-native";
 
 
 export default function MyModal(props){
@@ -19,7 +19,7 @@ export default function MyModal(props){
         closeModal()
     }
     return (
-        <Modal style={styles.container} visible={props.visible}>
+        <Modal visible={props.visible}>
             <View>
             <Image
                  width={200}
@@ -28,10 +28,10 @@ export default function MyModal(props){
                      uri: "https://t4.ftcdn.net/jpg/01/33/43/31/360_F_133433110_zgatj8cIiWvu5LuIsFd1Y1XED7vnptOe.jpg"}}
             />
              <TextInput style={styles.input} onChangeText={recupInput} value={textInput}></TextInput>
-                <View style={styles.buttonGroup}>
-                    <Button style={styles.addButton} title="Add" onPress={addNewItemHandler}></Button>
+                <View style={styles.containerButton}>
+                    <Button style={styles.addButton} title="Ajouter article" onPress={addItemToBasket}></Button>
                     <TouchableOpacity style={styles.cancelButton} >
-                    <Text style={styles.buttonText}>Cancel</Text>
+                    <Text style={styles.buttonText}>ANNULER</Text>
             
                     </TouchableOpacity>
             
@@ -40,27 +40,3 @@ export default function MyModal(props){
         </Modal>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 20,
-        marginTop: 20,
-    },
-    buttonGroup : {
-        flexDirection: "row",
-        justifyContent: 'space-around',
-        width: '70%', 
-    },
-    input : {
-
-    },
-    addButton: {
-
-    },
-    cancelButton: {
-
-    },
-    buttonText :{
-        
-    }
-});

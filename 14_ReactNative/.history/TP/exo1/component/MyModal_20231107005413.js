@@ -51,16 +51,5 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         width: '70%', 
     },
-    input : {
-
-    },
-    addButton: {
-
-    },
-    cancelButton: {
-
-    },
-    buttonText :{
-        
-    }
+    input
 });

@@ -50,17 +50,5 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: 'space-around',
         width: '70%', 
-    },
-    input : {
-
-    },
-    addButton: {
-
-    },
-    cancelButton: {
-
-    },
-    buttonText :{
-        
     }
 });

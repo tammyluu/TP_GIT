@@ -52,15 +52,6 @@ const styles = StyleSheet.create({
         width: '70%', 
     },
     input : {
-
-    },
-    addButton: {
-
-    },
-    cancelButton: {
-
-    },
-    buttonText :{
         
     }
 });

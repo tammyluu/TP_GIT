@@ -59,8 +59,5 @@ const styles = StyleSheet.create({
     },
     cancelButton: {
 
-    },
-    buttonText :{
-        
     }
 });
