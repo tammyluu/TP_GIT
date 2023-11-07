@@ -32,7 +32,7 @@ export default function List(){
                 )
            }} keyExtractor={(prod, index )=>{
             
-           }}return index
+           }}return in
               
            />
 

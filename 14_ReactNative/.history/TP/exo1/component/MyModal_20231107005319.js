@@ -21,7 +21,12 @@ export default function MyModal(props){
     return (
         <Modal style={styles.container} visible={props.visible}>
             <View>
-           
+            <Image
+                 width={200}
+                 height={200}
+                 source={{
+                     uri: "https://t4.ftcdn.net/jpg/01/33/43/31/360_F_133433110_zgatj8cIiWvu5LuIsFd1Y1XED7vnptOe.jpg"}}
+            />
              <TextInput style={styles.input} onChangeText={recupInput} value={textInput}></TextInput>
                 <View style={styles.buttonGroup}>
                     <Button style={styles.addButton} title="Add" onPress={addNewItemHandler}></Button>
@@ -41,21 +46,5 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: 20,
     },
-    buttonGroup : {
-        flexDirection: "row",
-        justifyContent: 'space-around',
-        width: '70%', 
-    },
-    input : {
-
-    },
-    addButton: {
-
-    },
-    cancelButton: {
-
-    },
-    buttonText :{
-        
-    }
+    
 });

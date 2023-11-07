@@ -26,13 +26,9 @@ export default function List(){
             <Button  title="Add" onPress = {MyMessage}/>
            <FlatList data={items} renderItem={(items) =>{
                 return (
-                    <View>
-                    <Text style={styles.myText}></Text>
-               </View>
+                    
                 )
-           }} keyExtractor={(prod, index )=>{
-            
-           }}return index
+           }}
               
            />
 

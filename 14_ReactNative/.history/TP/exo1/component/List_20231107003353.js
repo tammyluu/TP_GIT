@@ -25,15 +25,11 @@ export default function List(){
             <MyModal visible={modal} closeModal={closeModal} addItem={addItemHandler}></MyModal>
             <Button  title="Add" onPress = {MyMessage}/>
            <FlatList data={items} renderItem={(items) =>{
-                return (
-                    <View>
+
+           }}
+               <View>
                     <Text style={styles.myText}></Text>
                </View>
-                )
-           }} keyExtractor={(prod, index )=>{
-            
-           }}return index
-              
            />
 
         </View>

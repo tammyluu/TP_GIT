@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {  StyleSheet,View, Text, TextInput, Button, FlatList } from "react-native";
+import {  StyleSheet,View, Text, TextInput, Button } from "react-native";
 import MyModal from "./MyModal";
 export default function List(){
    
@@ -24,17 +24,7 @@ export default function List(){
             <Text style={styles.myText}>Liste de courses</Text>
             <MyModal visible={modal} closeModal={closeModal} addItem={addItemHandler}></MyModal>
             <Button  title="Add" onPress = {MyMessage}/>
-           <FlatList data={items} renderItem={(items) =>{
-                return (
-                    <View>
-                    <Text style={styles.myText}></Text>
-               </View>
-                )
-           }} keyExtractor={(prod, index )=>{
-            
-           }}return index
-              
-           />
+           <Flat
 
         </View>
     )
@@ -49,7 +39,7 @@ const styles = StyleSheet.create({
      myText: {
          margin: 8,
          color: "black",
-         fontSize: 30,
+         fontSize: 
          alignContent: "center",
          justifyContent: "center",
      },
