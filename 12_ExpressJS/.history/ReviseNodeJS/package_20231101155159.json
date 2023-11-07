@@ -1,0 +1,16 @@
+{
+  "name": "revisenodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "stra"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Tammy",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

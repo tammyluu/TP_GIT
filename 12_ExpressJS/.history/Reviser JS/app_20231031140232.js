@@ -1,0 +1,2 @@
+/*-----Array--------- */
+const numbers = []

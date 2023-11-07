@@ -1,0 +1,2 @@
+
+exportsconst hello = 'Bonjour';
