@@ -2,7 +2,7 @@ import { StyleSheet, Text, View , SafeAreaView} from 'react-native'
 import React from 'react'
 import Button from './components/Button'
 import Row from './components/Row'
-import calculator from './components/logic'
+import calculator , {initialState} from './components/logic.js'
 import { useState } from 'react'
 
 export default function App() {
