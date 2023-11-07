@@ -1,4 +1,5 @@
 import readline  from 'readline';
+
 export class Ihm {
     constructor(morpion) {
       this.morpion = morpion;

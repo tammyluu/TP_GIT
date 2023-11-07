@@ -1,9 +1,9 @@
 export class Morpion {
   constructor() {
     this.grid = [
-      [null, null, null],
-      [null, null, null],
-      [null, null, null]
+      [' ', ' ', ' '],
+      [' ', ' ', ' '],
+      [' ', ' ', ' ']
     ];
     this.currentPlayer = 'X';
   }
