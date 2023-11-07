@@ -23,7 +23,7 @@ export default function List(){
         <View style={styles.container}>
             <Text style={styles.myText}>Liste de courses</Text>
             <MyModal visible={modal} closeModal={closeModal} addItem={addItemHandler}></MyModal>
-            <Button  title="Add" onPress = {MyMessage}/>
+            <Button  title="Add" onPress = {addItem}/>
            <FlatList data={items} renderItem={(items) =>{
                 return (
                     <View>
