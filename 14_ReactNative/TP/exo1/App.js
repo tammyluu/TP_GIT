@@ -6,14 +6,14 @@ import Article from './component/Article'
 export default function App() {
     const [modalIsVisible,setModalIsVisible] = useState(false)
     const [articles,setArticles] = useState([])
-
+    
     function addArticle(article){
         setArticles(articlesCurrent => [
             ...articlesCurrent,
             { text : article , id : Math.random().toString()}
         ])
+      
         setModalIsVisible(false) //  closeModale()
-       
     }
 
     function closeModale(){
@@ -24,24 +24,31 @@ export default function App() {
         setModalIsVisible(true)
     }
     function deleteArticle (id) {
-      const newArticle = articles.filter(article => article.id !== id);
+      setArticles((articlesCurrent)=>{
+        return articlesCurrent.filter((item)=> item.id !=id)
+      })
+        
+      /* const newArticle = articles.filter(article => article.id !== id);
       setArticles(newArticle);
-      console.log("article deleted");
+      console.log("article deleted"); */
     }
   return (
     <View style={styles.container}>
+      <Article item={{ text : "article" , id : 99}} isRed></Article>
+      <Article item={{ text : "toto" , id : 98}} isRed></Article>
       <Button title='Add Article' onPress={openModale} />
       <ModalInput visible={modalIsVisible} closeModale={closeModale} addArticle={addArticle}></ModalInput>
       <FlatList data={articles} renderItem={(itemData) => {
         return(
-            <Article item={itemData.item} ></Article>
+           <Article item={itemData.item}  deleteArticle={deleteArticle}></Article>
+
         )
       }
       } keyExtractor={(item,index)=> {
         return index // item.id
       }}
       ></FlatList>
-      <Button title='Remove' onPress={deleteArticle}/>
+      
     </View>
   )
 }
