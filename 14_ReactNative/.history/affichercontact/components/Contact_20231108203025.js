@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text } from "react-native"
+import { View, Image, StyleSheet, Button, TextInput, TouchableOpacity, Text } from "react-native"
 
 
 export default function Contact() {
@@ -15,10 +15,9 @@ export default function Contact() {
                     }} />
             </View>
          
-                <Text style={styles.textStyle}>Nom: <Text style={styles.textBold}>Capitaine</Text></Text>
-                <Text style={styles.textStyle}>Prenom: <Text style={styles.textBold}>Haddock</Text> </Text>
-                <Text style={styles.textStyle}>Téléphone: <Text style={styles.textBold}>01.23.36.48.75</Text></Text>
-                <Text style={styles.textStyle}>Adresse: <Text style={styles.textBold}>35 rue des pias 59200 Tourcoing</Text> </Text>
+               <View>
+                
+               </View>
             
 
         </View>
@@ -31,6 +30,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         backgroundColor: "#faebd6",
+
         padding: 20,
         marginTop: 20,
     },
@@ -46,8 +46,7 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     image: {
-        justifyContent: "center",
-        alignItems: "center",
+
         borderRadius: 100,
         marginBottom: 20
     }

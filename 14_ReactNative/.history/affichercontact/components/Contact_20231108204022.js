@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text } from "react-native"
+import { View, Image, StyleSheet, Button, TextInput, TouchableOpacity, Text } from "react-native"
 
 
 export default function Contact() {
@@ -31,6 +31,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         backgroundColor: "#faebd6",
+
         padding: 20,
         marginTop: 20,
     },
@@ -46,8 +47,7 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     image: {
-        justifyContent: "center",
-        alignItems: "center",
+
         borderRadius: 100,
         marginBottom: 20
     }

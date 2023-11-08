@@ -46,8 +46,7 @@ const styles = StyleSheet.create({
         color: 'black'
     },
     image: {
-        justifyContent: "center",
-        alignItems: "center",
+
         borderRadius: 100,
         marginBottom: 20
     }
