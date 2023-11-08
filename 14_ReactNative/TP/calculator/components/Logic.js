@@ -1,5 +1,5 @@
 
-    export    const initialState = {
+    export  const initialState = {
         currentValue: "0",
         operator: null,
         previousValue: null,
@@ -12,7 +12,7 @@
             currentValue: `${state.currentValue}${value}`,
           };
     }
-    const handleEqual = (state) => {
+    export const handleEqual = (state) => {
         const { currentValue, previousValue, operator } = state;
       
         const current = parseFloat(currentValue);
