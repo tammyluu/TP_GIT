@@ -1,9 +1,13 @@
 import { StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native'
 import React from 'react'
 
-export default function Button({onPress, text, theme, HandleTap}) {
+export default function Button({onPress, text, size, theme}) {
     const buttonStyles = [styles.button];
     const textStyles = [styles.text];
+
+  if (size === "double") {
+    buttonStyles.push(styles.buttonDouble);
+  }
 
   if (theme === "secondary") {
     buttonStyles.push(styles.buttonSecondary);
@@ -41,7 +45,14 @@ const styles = StyleSheet.create({
 
     },
     textSecondary: {
-      color: "white",
+      color: "#060606",
+    },
+    buttonDouble: {
+      width: screen.width / 2 - 10,
+      flex: 0,
+      alignItems: "flex-start",
+      paddingLeft: 40,
+      
     },
     buttonSecondary: {
       backgroundColor: "#a6a6a6",

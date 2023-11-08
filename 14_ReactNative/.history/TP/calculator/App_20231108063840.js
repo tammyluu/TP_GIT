@@ -7,16 +7,15 @@ import { useState } from 'react'
 
 export default function App() {
     const [state, setState] = useState("")
-    const [operator, setOperation] = useState("")
 
     // handle tap method
-    const HandleTap = (value) => {
-       setState((state) => calculator(type, value, state));
+    const HandleTap = (type, value) => {
+        setState((state) => calculator(type, value, state));
     };
 
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>Calculator</Text>
+        <Text style={styles.myText}>Calculator</Text>
        {/* Status base here */}
        <SafeAreaView>
           <Text style={styles.value}>
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
         backgroundColor :"black",
         justifyContent: "flex-end",
     },
-    title : {
+    myText : {
         color : "white",
         padding : 20,
         fontSize : 40,

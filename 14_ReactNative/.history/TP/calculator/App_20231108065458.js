@@ -7,11 +7,10 @@ import { useState } from 'react'
 
 export default function App() {
     const [state, setState] = useState("")
-    const [operator, setOperation] = useState("")
 
     // handle tap method
-    const HandleTap = (value) => {
-       setState((state) => calculator(type, value, state));
+    const HandleTap = (type, value) => {
+        setState((state) => calculator(type, value, state));
     };
 
   return (

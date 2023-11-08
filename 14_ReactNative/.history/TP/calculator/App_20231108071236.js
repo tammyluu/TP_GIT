@@ -6,7 +6,7 @@ import calculator , {initialState} from './components/logic.js'
 import { useState } from 'react'
 
 export default function App() {
-    const [state, setState] = useState("")
+    const [textInput, setState] = useState("")
     const [operator, setOperation] = useState("")
 
     // handle tap method
@@ -20,7 +20,7 @@ export default function App() {
        {/* Status base here */}
        <SafeAreaView>
           <Text style={styles.value}>
-            {parseFloat(state.currentValue).toLocaleString()}
+            {parseFloat(textInput.currentValue).toLocaleString()}
           </Text>
 
           {/* Do create componentRow */}

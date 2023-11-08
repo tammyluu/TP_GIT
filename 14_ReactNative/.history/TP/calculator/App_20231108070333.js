@@ -6,12 +6,11 @@ import calculator , {initialState} from './components/logic.js'
 import { useState } from 'react'
 
 export default function App() {
-    const [state, setState] = useState("")
-    const [operator, setOperation] = useState("")
+    const [input, setInput] = useState("")
 
     // handle tap method
-    const HandleTap = (value) => {
-       setState((state) => calculator(type, value, state));
+    const HandleTap = (type, value) => {
+        set((state) => calculator(type, value, state));
     };
 
   return (

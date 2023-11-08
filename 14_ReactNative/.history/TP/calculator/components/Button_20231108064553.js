@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native'
 import React from 'react'
 
-export default function Button({onPress, text, theme, HandleTap}) {
+export default function Button({onPress, text, size, theme}) {
     const buttonStyles = [styles.button];
     const textStyles = [styles.text];
 
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 
     },
     textSecondary: {
-      color: "white",
+      color: "#060606",
     },
     buttonSecondary: {
       backgroundColor: "#a6a6a6",
