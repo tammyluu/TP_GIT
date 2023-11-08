@@ -2,12 +2,12 @@ import { StyleSheet, Text, View , SafeAreaView} from 'react-native'
 import React from 'react'
 import Button from './components/Button'
 import Row from './components/Row'
-import calculator , {initialState} from './components/logic.js'
+import calculator , {initialState} from '../components/logic.js'
 import { useState } from 'react'
 
 export default function App() {
     const [state, setState] = useState("")
-    const [operator, setOperation] = useState("")
+    
 
     // handle tap method
     const HandleTap = (value) => {
@@ -25,28 +25,17 @@ export default function App() {
 
           {/* Do create componentRow */}
           <Row>
-            <Button
-              text="C"
-              theme="secondary"
-              onPress={() => HandleTap("clear")}
+            <Button text="C" theme="secondary" onPress={() => HandleTap("clear")}
+            />
+
+            <Button text="^" theme="secondary" onPress={() => HandleTap("power")}
+            />
+
+            <Button text="%" theme="secondary" onPress={() => HandleTap("percentage")}
             />
 
             <Button
-              text="^"
-              theme="secondary"
-              onPress={() => HandleTap("power")}
-            />
-
-            <Button
-              text="%"
-              theme="secondary"
-              onPress={() => HandleTap("percentage")}
-            />
-
-            <Button
-              text="/"
-              theme="secondary"
-              onPress={() => HandleTap("operator", "/")}
+              text="/" theme="secondary" onPress={() => HandleTap("operator", "/")}
             />
           </Row>
 
@@ -62,10 +51,7 @@ export default function App() {
             <Button text="5" onPress={() => HandleTap("number", 5)} />
             <Button text="6" onPress={() => HandleTap("number", 6)} />
             <Button text="7" onPress={() => HandleTap("number", 7)} />
-            <Button
-              text="-"
-              theme="secondary"
-              onPress={() => HandleTap("operator", "-")}
+            <Button text="-" theme="secondary" onPress={() => HandleTap("operator", "-")}
             />
           </Row>
 
@@ -73,25 +59,16 @@ export default function App() {
             <Button text="1" onPress={() => HandleTap("number", 1)} />
             <Button text="2" onPress={() => HandleTap("number", 2)} />
             <Button text="3" onPress={() => HandleTap("number", 3)} />
-            <Button
-              text="+"
-              theme="secondary"
-              onPress={() => HandleTap("operator", "+")}
+            <Button text="+" theme="secondary" onPress={() => HandleTap("operator", "+")}
             />
           </Row>
 
           <Row>
             <Button text="." onPress={() => HandleTap("number", ".")} />
             <Button text="0" onPress={() => HandleTap("number", 0)} />
-            <Button
-              text="Del"
-              theme="primary"
-              onPress={() => HandleTap("clear")}
+            <Button text="Del" theme="primary" onPress={() => HandleTap("clear")}
             /> 
-            <Button
-              text="="
-              theme="secondary"
-              onPress={() => HandleTap("equal", "=")}
+            <Button text="=" theme="secondary" onPress={() => HandleTap("equal", "=")}
             />
           </Row>
         </SafeAreaView>
