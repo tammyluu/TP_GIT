@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, Dimensions} from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, Dimensions, Pressable} from 'react-native'
 import React from 'react'
 
 export default function Button({onPress, text, theme}) {
@@ -13,9 +13,11 @@ export default function Button({onPress, text, theme}) {
   }
 
   return (
-    <TouchableOpacity onPress={onPress} style={buttonStyles}>
-      <Text style={textStyles}>{text}</Text>
+    <Pressable>
+      <TouchableOpacity onPress={onPress} style={buttonStyles}>
+      <Text style={textStyles}>{text}</Text> 
     </TouchableOpacity>
+    </Pressable>
   )
 }
 // set dimmenstion
