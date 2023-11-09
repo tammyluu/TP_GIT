@@ -5,8 +5,9 @@ import { NavigationContainer } from '@react-navigation/native'
 import Home from './screens/Home'
 import AddDisplay from './screens/AddDisplay'
 import DetailList from './screens/DetailList'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-const Stack = create.StackNavigator()
+const Stack =createNativeStackNavigator()
 
 export default function App() {
   return (
