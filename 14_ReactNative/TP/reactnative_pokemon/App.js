@@ -1,25 +1,28 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet } from 'react-native'
+
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Provider } from 'react-redux'
 import { NavigationContainer } from '@react-navigation/native'
-import Pokedex from './screens/Pokedex'
-import Pokemon from './screens/Pokemon'
 import Home from './screens/Home'
-
-
-const Stack =createNativeStackNavigator()
+import Pokedex from './screens/Pokedex'
+import Details from './screens/Details'
+import store from './store/store'
 
 
 export default function App() {
-  return (
-   <NavigationContainer>
-    <Stack.Navigator initialRouteName='Home'>
-        <Stack.Screen name='Pokedex' component={Pokedex} options={{title : 'Pokedex'}}></Stack.Screen>
-        <Stack.Screen name='Pokemon' component={Pokedex} options={{title : 'Pokemon'}}></Stack.Screen>
-        <Stack.Screen name='Home' component={Home} ></Stack.Screen>
 
-    </Stack.Navigator>
-   </NavigationContainer>
+  const Stack = createNativeStackNavigator()
+  return (
+   <Provider store={store}>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Home'>
+      <Stack.Screen name='Home' component={Home}></Stack.Screen>
+      <Stack.Screen name='Pokedex' component={Pokedex}></Stack.Screen>
+      <Stack.Screen name='Details' component={Details}></Stack.Screen>
+     
+      </Stack.Navigator>
+    </NavigationContainer>
+   </Provider>
   )
 }
 

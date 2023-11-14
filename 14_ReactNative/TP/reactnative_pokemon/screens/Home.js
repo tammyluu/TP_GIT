@@ -6,7 +6,7 @@ export default function Home({navigation}) {
     <View>
       <Text style={styles.myText}>Attrapper les tous, Pokemon !!</Text>
       <View style={styles.myButtons}>
-      <Pressable title='Pokedex' style={styles.myButtonLeft} onPress={() => navigation.navigate("Pokedex",{message : "Pokemon List"})}><Text>Pokemons</Text></Pressable>
+      <Pressable title='Pokedex' style={styles.myButtonLeft} onPress={() => navigation.navigate("Pokedex")}><Text>Pokemons</Text></Pressable>
       <Pressable title='Pokemon' style={styles.myButtonRight} onPress={() => navigation.navigate("Pokemon",{message : "Pokemon detail"})}><Text>Pokedex</Text></Pressable>
       </View>
 
